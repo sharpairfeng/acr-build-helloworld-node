@@ -1,0 +1,2142 @@
+﻿11a8344b-95e8-4ee9-962c-e5dec627bc85
+
+
+11U7-2V6X
+
+1-2323854445
+
+Doc ID 1634843.1
+
+GetProfileAttr('Is Anonymous') = 'FALSE'
+
+
+InList("IMMI_Base_Internal", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Citizenship_Officer", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Counter_Staff", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_GFU_Officer", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Help_Desk_Level1", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Help_Desk_Level2", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Help_Desk_Level3", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_Information_Officer", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_NatO_Administrator", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_CIT_STO_Administrator", GetProfileAttrAsList("User Responsibilities"))
+
+1 - full name,2 - dob,5 - lawful statue,7 - service type,8 - Identifier type,9 - Identifier,10 - Gender,
+
+Siebel Universal Agent;Siebel Field Service;Siebel Sales Enterprise;Siebel eService;Siebel Public Sector
+
+IMMI Service;Subject Contact Full Name Calc;Subject Contact Identity Birth Date;Subject Contact Immigration Status;Service Type Sub Type Calc;Subject Contact Identifier;Subject Contact Identity Gender;Subject Contact Identifier Type
+
+1- List 1.3; SmartScript List.5; List 6.1; List 3.2; List 2.1; List 7.1; List 5.1 ; List 9.1; List 10.1; List 11.1; List 4.4; List 8.9; List 12.1;List 13.1;List 30.1
+3 - List 5.3 ;List 1.5; List 6.4;List 7.2; List 9.5; List 2.4; List 11.3; List 3.9; List 8.7; List 12.2;List 13.4;List 14.4; List 15.4; List 16.4; List 20.4; List 18.4; List 19.4; List 17.3; List 21.4; List 22.4; List 23.4;List 28.4
+
+4 - List 1.6;List 5.2;List 6.6;List 3.1;List 2.2;List 7.5;List 9.3;List 10.2;List 11.5;List 4.3;List 8.8;List 12.3;List 13.2;List 14.2;List 15.2;List 16.2;List 17.4;List 18.2;List 19.2;List 20.2;List 21.2;List 22.2;List 23.2;List 24.2;List 28.2
+
+5- List 1.7;List 2.8;List 5.4;List 6.2;List 3.5;List 7.6;List 9.6;List 10.6;List 11.6;List 4.6;List 8.5;List 12.4;List 13.3;List 14.3;List 15.3;List 16.3;List 17.2;List 18.3;List 19.3;List 20.3;List 21.3;List 22.3;List 23.3;List 24.3;List 28.3;List 30.3
+
+7 - List 13.4; List 14.8; List 15.8; List 16.8; List 17.8; List 18.8; List 19.8; List 20.8; List 21.8;List 24.8;List 28.8;List 30.4
+8 - List 13.5; List 14.9; List 15.9; List 16.9; List 17.9; List 18.9; List 19.9; List 20.9; List 21.9;List 24.9;List 28.9;List 30.7
+9 - List 13.6; List 14.10; List 15.10; List 16.10; List 17.10; List 18.10;List 19.10;List 20.10;List 24.10;List 28.10;List 30.5
+10 - List 1.1;List 3.2;List 13.9;List 14.7;List 15.7;List 16.7;List 17.7;List 18.7;List 19.7;List 20.7;List 21.7;List 12.7;List 24.7;List 27.5;List 28.7;List 30.6
+11 - List 6.1;List 3.2;List 7.1;List 9.1;List 11.1;List 8.9;List 12.1;List 13.1;List 14.1;List 15.1;List 16.1;List 17.1;List 18.1;List 19.1;List 20.1;List 21.1;List 22.1;List 23.1;List 24.1;List 28.1
+12 - List 1.9;List 5.6;List 6.3;List 3.6;List 2.7;List 7.4;List 9.4;List 10.4;List 11.4;List 4.2;List 8.3;List 12.6;List 13.6;List 14.6;List 15.6;List 16.5;List 17.6;List 18.6;List 19.6;List 20.6;List 21.6;List 22.6;List 23.6;List 24.6;List 28.6
+
+
+IMMI TBUI Community Detention Completed Form Applet
+
+TestChild
+11U7-2VLD
+InvokeServiceMethod("CSTM TG Referral Service", "GetChildValues","ParId=eval([Id]), ChildType=Entity, PriRowId=eval([Primary Entity Id])", "ResultStr")
+
+11U7-2VX0
+IMMI Apprehension (UI) IMMI Web Form Case UI IMMI TBUI Activity Plan IMMI Meetings IMMI CTMS Search
+
+
+IMMI YF 310816 - Created for CSTM TG Referral
+InvokeServiceMethod ("Order Upgrade Service", "UpgradeUTCDateTime", "DateTime=Actual End DTTM (UTC), TimeZone=Location Timezone, BusComp=FM Order Entry - Stops, RowId=eval([Id])", "UTCDateTime")
+
+InvokeServiceMethod ("CSTM TG Referral Service", "GetLoginUserSecLvl", "1=1", "ResultNum")
+
+
+
+
+
+TG Referral Risk
+
+IIF([IMMI Birth Date Year Calc] IS NOT NULL, "Y","N")  [IMMI Birth Date Day Calc]+"/"+[IMMI Birth Date Month Calc]+"/"+[IMMI Birth Date Year Calc]
+
+IIF([IMMI DOBY Calc] = "Y", IIF([IMMI DOBM Calc] = "Y", IIF([IMMI DOBD Calc] = "Y", [IMMI DDMMYYYY], [IMMI MMYYYY]), [IMMI YYYY]), [IMMI YYYY])
+
+
+Australian Taxation Office
+IIf (Language () = "JPN" OR Language () = "CHS" OR Language () = "CHT" OR Language () = "KOR", [Last Name] + IIf([First Name] IS NULL, '', ' ') + [First Name], [First Name] + IIf([Last Name] IS NULL, '',' ') + [Last Name])
+
+[Ref Officer Fst Name] + IIf ([Ref Officer Fst Name] IS NULL, '', IIf([Ref Officer Lst Name] IS NULL, '', ' ')) + [Ref Officer Lst Name]
+
+IIf([DOBY Calc] = "Y", IIf ([DOBM Calc] = "Y", IIf ([DOBD Calc] = "Y", [DDMMYYYY Calc], [MMYYYY Calc]), [DOB Year]), [DOB Year])
+PickList Owned By
+
+CSTM_TG_REF_RISK_TYPE
+CSTM_TG_REF_RISK_CAT
+CSTM_TG_REF_ENTY_TYPE
+CSTM_TG_REF_ENTY_ROLE
+CSTM_TG_REF_STATUS
+CSTM_TG_REF_SOURCE
+CSTM_TG_REF_CHANNEL
+CSTM_TG_REF_ALLOC
+CSTM_TG_REF_STAGE
+CSTM_TG_REF_STA_REASON
+
+= IIf ([Transaction Type] = LookupValue("LOY_TXN_TYPE_CD", "PARTNER_PRICE"), LookupValue("LOY_PAYMENT_CD","PAY"), [Partner Pricing Type Code])
+
+DD/MM/YYYY
+IMMI Web Form Boolean 01 Picklist
+DIMA Country Picklist
+DIMA Address State Picklist
+
+CUT Account Contact Assoc Applet
+Contact Assoc Applet
+
+UndoQuery control created during Template Merge
+
+
+IIf([Referral Status]=LookupValue('TG_REF_STATUS','Closed'), 'Y', 'N')
+LookupValue(""TG_REF_STATUS"", ""Closed"") LookupValue(""TG_REF_STATUS"", ""Created In Error"")
+
+TG_REF_RISK_STA
+No Longer Required
+
+2063877.1
+e.toString();//
+EventMethodUndoRecord
+
+[Referral Status]=LookupValue('CSTM_TG_REF_STATUS','Closed') AND
+CSTM Case Lead Attachment TRIM IO
+CSTM Case Lead Attachment
+LeadFileExt
+LeadFileBuffer
+
+<>LookupValue('CSTM_TG_REF_STATUS','Closed') OR [Referral Status Reason] IS NOT NULL
+=LookupValue('CSTM_TG_REF_STATUS','Closed') AND [Referral Status Reason] IS NULL
+
+IS NOT NULL OR [Referral Status]<>LookupValue('CSTM_TG_REF_STATUS','Closed')
+
+mohamed.noorani@border.gov.au
+
+
+"IMMISubmitCrimTrac", "INVOKESVC", "IMMI Web Form Case", "Workflow Process Manager", "RunProcess", "'ProcessName'", "'IMMI Web Form CrimTrac BC Invoke Wrapper WF'", "'Object Id'", "[Id]", "'sAction'", "'GENERATE_XML'"
+
+"UpdateChildPrimary", "INVOKESVC", "CSTM TG Referral", "CSTM TG Referral Service", "UpdateChildPrimFlg", "'PriRowId'", "[Primary Entity Id]", "'ParId'", "[Id]", "'Child'", "'Entity'"
+
+
+IMMI_CC_Referrals
+IMMI_CC_Referrals_RO
+
+11U7-3MSL
+
+IIf([Referral Status]=LookupValue('CSTM_TG_REF_STATUS','Closed'), "Y", "N")
+
+Referral Attachments
+View Detail (Parent with Pointer)
+DIMA_COUNTRY
+
+"State", "Country", "IIf([Oz State Calc]='Y', 'AUSTRALIA', '')"
+
+On Hold – Referred to ATOB
+DIMA Country Picklist
+
+
+[Primary Entity Address]+IIf([Primary Entity Address] IS NULL, '', ' ')+[Primary Entity City]+IIf([Primary Entity City] IS NULL,'',' ')+[Primary Entity State]+IIf([Primary Entity State] IS NULL, '',' ')+[Primary Entity Country]+IIf([Primary Entity Country] IS NULL,'',' ')+[Primary Entity Post Code]
+
+NOT InList("IMMI_CC_Referrals", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_Base_Internal_RO", GetProfileAttrAsList("User Responsibilities"))
+
+
+'CSTM TG Referral'.Search = "[Referral Allocation Team] IS NOT NULL AND [Referral Status] <> LookupValue(""CSTM_TG_REF_STATUS"", ""Created In Error"")"
+'CSTM TG Referral'.Sort = ""
+
+'CSTM TG Referral'.Search = "[Referral Status] <> LookupValue(""CSTM_TG_REF_STATUS"", ""Closed"") AND [Referral Status] <> LookupValue(""CSTM_TG_REF_STATUS"", ""Created In Error"") AND [Urgent] = ""Yes"""
+'CSTM TG Referral'.Sort = ""
+
+
+'CSTM TG Referral'.Search = "[Referral Status] ~LIKE ""*Active, Referred*"" OR [Urgent] = ""Yes"""
+'CSTM TG Referral'.Sort = ""
+
+
+IMMI_EMP_SEC_CLS
+IMMI Default Emp Sec Cls
+
+11U7-3JY6
+IMMI Emp Sec Cls Num
+
+InList("Siebel Administrator", GetProfileAttrAsList('User Responsibilities'))
+[Record Security Level Num Join]<=GetProfileAttr("IMMI Emp Sec Cls Num")
+
+49039-164401
+wyY9269E60+nJsHiTaLAKnZ2ZWM=
+FO/dXcUTzi+AnBALu8+nRxfPRG0=
+IMMI Emp Sec Cls
+Expr: "Lookup("IMMI_EMP_SEC_CLS", LookupValue("IMMI_EMP_SEC_CLS", GetProfileAttr('IMMI Emp Sec Cls')))"
+
+Itr1WSFM
+
+http://howtosiebel.blogspot.com.au/2015/07/how-to-pass-arguments-by-reference-in-siebel.html
+
+
+O614Wce8T9fyrS0x
+ [Record Security Level Num Join]<=Lookup("IMMI_EMP_SEC_CLS",LookupValue("IMMI_EMP_SEC_CLS",GetProfileAttr("IMMI Emp Sec Cls Id")))
+
+
+
+ 01800007402401
+ 00007402401
+
+
+ SecureCard_CreateCard_PreProcess
+ IMMI SLHS - Contact Base Secure Card
+
+IMMI Web Form Photo Id Attachment
+
+IMMI ESC Photo Id Form Applet
+
+ 49039-169509
+
+SiebelMsg.IMMI Web Form Attachment.WebformFileBuffer
+SiebelMsg.IMMI Web Form Attachment.WebformFileSrcType
+SiebelMsg.IMMI Web Form Attachment.WebformFileName
+SiebelMsg.ListOfWebFormAtts.WebFormAtt.Comment
+SiebelMsg.ListOfWebFormAtts.WebFormAtt.WebFormId
+SiebelMsg.ListOfWebFormAtts.WebFormAtt.WebformFileExt
+
+SiebelMessage.ListofIMMI Web Form Attachment IO
+IMMI Web Form Attachment
+
+
+Error invoking service 'EAI Siebel Adapter', method 'Upsert' at step 'Upsert Signature'.(SBL-BPR-00162)
+--
+Method 'NewRecord' of business component 'IMMI Web Form Attachment' (integration component 'IMMI Web Form Attachment') for record with search specification '[WebformFileExt] IS NULL AND [WebformFileName] IS NULL AND [Web Form Id] IS NULL' returned the following error:"Field 'FileSrcType' does not exist in definition for business component 'IMMI Web Form Attachment'.
+
+Please ask your systems administrator to check your application configuration.(SBL-DAT-00398)"(SBL-EAI-04451)
+
+Error invoking service 'EAI Integration Object to XML Hierarchy Converter', method 'XMLHierToIntObjHier' at step 'ConvertIO'.(SBL-BPR-00162)
+--
+Invalid XML representation: field 'WebformFileName' should not be represented as XML attribute 'WebformFileName'(SBL-EAI-04129)
+
+
+IMMI Web Form Signature Attachment Workflow
+
+
+IMMI Web Form Question Map
+
+1-12M290H
+IIf([NoDelete Calc]="Y" AND NOT InList("Siebel Administrator", GetProfileAttrAsList("User Responsibilities")),'Y','N')
+
+C:\siebel\8.11\Client_1\BIN\siebel.exe /c C:\Siebel\8.11\Client_1\bin\enu\extwebform_siebdev1oui.cfg /b "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /u exityb /p Exityb!112233 /app EXTESC
+
+
+IMMI_THK_CLT_CMD
+
+
+get("SWE_CTRL_DATE_TZ_PICK")
+"JDateTimeZonePick"
+
+2016-10-20 00:00:00 (GMT+04:00) Yerevan, Armenia
+
+
+var b=$("#s_2_1_18_0_icon");
+var t=SiebelApp.S_App.LocaleObject.GetTimeZoneList().split("|");
+t=$.map(t,function(n,i){
+return n!==t[i+1] ? n:null
+})
+b.datetimepicker({
+						changeMonth: true,
+						changeYear: true,
+						dateFormat: "yy-mm-dd",
+						timeFormat: "HH:mm:ss z",
+						showTimezone: true,
+						defaultTimezone: "+1000",
+						separator: " ",
+						yearRange: "c-100:c+100",
+						beforeShow: function() {
+							return true
+						},
+						onClose: function(){},
+						isRTL: false,
+						timezoneList: t
+					});
+b.datetimepicker("show");
+
+
+10/20/2016 10:00:00 AM
+
+
+'EventMethodQAS_JSP', ' GetProfileAttr("ActiveViewName") = "IMMI ESC Applicant Case View"  '
+getPSByType
+
+
+function convertTime(oldtime,profiletimezoneoffset){
+   var oldDO = new Date(oldtime);//2016-11-25 09:00:00 GMT+0800
+   var offset = oldDO.getTimezoneOffset()*60000;
+   var utcDO = oldDO.getTime()+offset;//convert to UTC datetime
+
+   var newoffset = 60000*profiletimezoneoffset;
+   var newDO = new Date(utcDO+newoffset);
+
+   return newDO.toLocaleString();
+
+}
+
+1-1IJMHPM
+
+(GMT+04:00) Port Louis, Mauritius
+DD/MM/YYYY HH:mm:ss
+07/18/2015 05:00:00
+(GMT+08:00) Perth
+(GMT+10:00) Canberra, Melbourne, Sydney
+IMMI TimeZone Conversion IO
+
+
+IMMI TimeZone Conversion Workflow
+
+SiebelMessage.ListOfImmiTimezoneConversionIoSiebelMsg.ImmiTimezoneConversion.OriginalDateTime
+
+
+SiebelMsg.ImmiTimezoneConversion.OriginalDateTime
+
+1-1661487388
+Resignation
+
+1-1IJMHI4 or 1-1IJMHPM
+
+
+IMMI_ESC_PATHWAY_STATUS
+
+IMMI_ESC_SEPARATION_STAT
+
+RSSPRA1   1-828017475
+oBc.GetFieldValue("IMMI Applicant Number")
+
+([IMMI Applicant Type] IS NULL OR [IMMI Applicant Status] IS NULL OR [IMMI Applicant Type]<>'ESC Applicant' OR ([IMMI Applicant Status]<>'Active' AND [IMMI Applicant Status]<>'Separated' AND [IMMI Applicant Status]<>'ESC Expired')) AND [Employment Status]<>'Terminated'
+Reporting in accordance with Aftercare Arrangement(s)
+
+IIf([Applicant Category]=LookupValue('IMMI_ESC_APPLICANT_CD','Internal Applicant'),[AGS Service Number],IIf([Applicant Category]=LookupValue('IMMI_ESC_APPLICANT_CD','External Applicant'),[ESS Id],''))
+
+queryObj["SearchSpec"]+=" AND [Pathway Process Status]='Further Information Required'";
+
+Pathway Process Status
+var bs=TheApplication().GetService("IMMI ESC Web Form Utilities");
+bs.Pub_GetSelOptions("11UJ-23GW","Disclaimer");
+11UJ-23GW
+
+BackgrndInvoke:Y|EntityName:CONTACT|BRPSwitchId:ESSAcountCreation|DisplayGUIErr:N
+
+
+getLocalFormRefData: function(pm){
+				try{
+					if(typeof pm === "undefined")
+						pm = SiebelApp.S_App.GetActiveView().GetAppletMap()["IMMI Web Form Button Applet"].GetPModel();
+
+					var rs = pm.Get("GetRecordSet");
+					if(rs.length!=1)//not form applet
+						throw "Make sure it is form applet";
+					var formName = rs[0]["Form Name"];
+					var formVer = rs[0]["Form Version"];
+					var formDisp = rs[0]["Form Disposition"];
+					var formId = rs[0]["Id"];
+
+					if(typeof immi.global(formName+"_RefData")==="undefined"
+						|| typeof immi.global(formName+"_RefData")["Ver_"+formVer]==="undefined"
+						|| typeof immi.global(formName+"_RefData")["Ops_"+formId]==="undefined"){
+						var JSONStr = immi.getRefDataFromSvr(formName,formVer,formDisp,formId);
+						if(JSONStr.length>0){
+							var JSONObj = JSON.parse(JSONStr);
+							immi.global(formName+"_RefData",JSONObj);
+						}
+					}
+
+					return {"FormName":formName,"FormVer":formVer,"RefData":immi.global(formName+"_RefData")["Ver_"+formVer],"Options":immi.global(formName+"_RefData")["Ops_"+formId]};
+	            }catch(e){
+	            	alert(e.toString());
+	            }
+			}
+
+
+<div id="dibp-dc-forms-dashboard" class="dibp-container dibp-container-dc-forms dibp-fill-parent">
+    <div id="page0" class="page current" data-pgkey="Options">
+       <div id="dibp-dc-options" class="dibp-fill-parent">
+           <h2><{ref data page title}></h2>
+           <div id="dibp-validation-errors" class="dibp-container dibp-validation-error-summary"></div>
+
+           <div id="dibp-dc-form-options" class="dibp-container">
+               <fieldset>
+                <legend class="is_reqired”></legend>
+                <ul class="options-list">
+                    <li>
+                        <input>
+                        <label>
+                    </li>
+                </ul>
+               </fieldset>
+           </div>
+       </div>
+    </div>
+</div>
+11UJ-2IZ8
+11UJ-2IO4
+
+11UJ-2JZJ
+IMMI Pathway Decision Automation Workflow
+"[Process Id]='"+[&Process Id]+"' AND [Source Id]='"+[&Object Id]+"'"
+
+JSON Output = '{"Append Ref Data":{"Existing Values":{"Address":{"Answers":[],"Applet Mode":"List"},"Third_Party":{"Answers":[{"Answer":"","Question":"Do you have a current partner/spouse?"},{"Answer":"","Question":"Family Name:"},{"Answer":"","Question":"Given Name(s):"},{"Answer":"","Question":"Previous/other names by which they have been/are known:"},{"Answer":"","Question":"Date of Birth Day:"},{"Answer":"","Question":"Date of Birth Month:"},{"Answer":"","Question":"Date of Birth Year:"},{"Answer":"AUSTRALIA","Question":"Country:"},{"Answer":"","Question":"Address:"},{"Answer":"","Question":"Town/City/Suburb:"},{"Answer":"","Question":"State:"},{"Answer":"","Question":"Post Code:"}],"Applet Mode":"Form"}},"Form Submission Version":"1","Selected Option List":["Address","Third_Party"]}}'
+
+IMMI YF 270117 ESC 3 - Added for DC
+""[Source Id] = '"" +sSourceId+ ""' AND [Process Id] = '"" + TheApplication().GetProfileAttr(""TheActiveTaskId"") + ""'""
+
+IMMI YF 270117 ESC 3 - Added
+Change of marital status and domestic partnership/circumstances…
+
+
+Circumstances Relevant to both your ESC and Security Clearance
+Circumstances Relevant to Security Clearance
+Circumstances Relevant to your ESC Reactivation
+
+
+[IMMI Applicant Type] IS NULL OR [IMMI Applicant Status] IS NULL OR [IMMI Applicant Type]<>'ESC Applicant' OR ([IMMI Applicant Status]<>'Active' AND [IMMI Applicant Status]<>'Separated' AND [IMMI Applicant Status]<>'ESC Expired')
+
+
+delete from CX_FORM_XM
+where par_row_id='11UJ-2RMC'
+
+commit;
+IMMI YF 210217 ESC 3 - Comment out as per spec
+Reason for Change
+RIAZ AHMED
+
+Expr: "IIF(ParentFieldValue('Form Name')='ESC','Y','')"
+LYNMARK BANTILAN
+
+11UJ-2ZVK
+Declarable Circumstances
+
+IMMI YF 020317 ESC 3 - Added
+1-18YS9AL
+Foreign_Relatives
+[Division] = 'ESC' OR [Division] = 'ESC Helpdesk'
+
+Parent: IMMI Web Form.User Submission Version
+
+Parent: 'IMMI Web Form.User Submission Version'
+Illicit Drug Use
+
+There is already an Internal Applicant record for Personnel Number: <Personnel Number>. The User ID of the existing Internal Applicant is: <Existing Applicant User ID>.  Please select a different record.
+
+IMMI ESC Decision Type Picklist  100  value
+Name LIC 50
+
+IMMI ESC Case Outcome Picklist 100 value
+
+
+DTYPE_UTCDATETIME
+
+LookupValue("IMMI_WEBFORM_EXT_ACCT_STATUS", "Not Created")
+
+
+"CreateExtAcct", "INVOKESVC", "IMMI Web Form Applicant", "Workflow Process Manager", "RunProcess", "'ProcessName'", "'IMMI EAI Web Applicant Create Logon Process'", "'RowId'", "[Id]"
+
+
+"CreateExtAcct", "INVOKE", "IMMI Web Form", "RefreshRecord"
+
+"mozilla/5.0 (windows nt 6.1; wow64; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; .net4.0c; .net4.0e; infopath.3; rv:11.0) like gecko"
+"mozilla/5.0 (compatible; msie 10.0; windows nt 6.1; wow64; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; .net4.0c; .net4.0e; infopath.3)"
+
+
+"mozilla/5.0 (windows nt 6.1; wow64) applewebkit/537.36 (khtml, like gecko) chrome/56.0.2924.87 safari/537.36"
+"mozilla/5.0 (windows nt 6.1; wow64; rv:28.0) gecko/20100101 firefox/28.0
+
+"mozilla/5.0 (windows nt 6.1; wow64; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; .net4.0c; .net4.0e; infopath.3; rv:11.0) like gecko"
+EXBSR6
+EXITYB
+EXBTJ1
+EXCBHA
+EXCBMC
+EXIBTI
+
+[Name] LIKE 'IMMI DC*' OR [Name] LIKE 'IMMI Web Form ESC*' OR [Name] LIKE 'IMMI ESC Applicant Ext*' OR [Name] = 'IMMI DC Web Form View' OR [Name] LIKE 'IMMI Web Form Landing*'
+Declarable Circumstance(s) to Report
+Changes to your marital status, domestic partnerships, personal relationships and/or cohabitants
+Becoming the subject of an administrative investigation or facing formal disciplinary or administrative action
+
+Involvement in any criminal or illegal activities (regardless of whether you have been charged or convicted) and/or <ul><li>adverse interactions with any border management, law enforcement or regulatory agency</li><li>non-compliance with any border related law</li><li>attendance at a court for any non-official purpose</li><li>becoming the subject of any court order</li></ul>
+
+[Type]='ESC Email - Outbound'
+Any other declarations and/or information which may be relevant to an assessment of your ongoing suitability for either clearance
+
+CSSBCFINSActivity
+
+var a="03/31/2017 05:33:29";
+var aa="03/31/2017 05:34:19";
+console.log(a.ToDate(Date.Format.DBTime).getTime()-aa.ToDate(Date.Format.DBTime).getTime()>0);
+Valid Pathway record not found. Please review Applicant's Pathway record/s before sending to SAP.
+
+IMMI ESC Applicants
+IMMI Web Form Case Decision
+IMMI Web Form Case
+Involvement in (or association with) any criminal, illegal or unlawful activity, regardless of whether you have been formally charged or convicted
+
+<swe:for-each startValue="60" count="50" iteratorName="currentId">
+              <swe:control id="swe:currentId" hintMapType="ListItem">
+                <li class="immi-col-12">
+                    <label class="large-para">
+                      <swe:this property="DisplayName" hintText="Label"/>
+                    </label>
+                    <swe:this property="FormattedHtml" hintText="Field" hintMapLabelId="swe:currentId"/>
+                </li>
+              </swe:control>
+            </swe:for-each>
+49079-86548
+IIf([Applicant Birth Day] IS NULL AND [Applicant Birth Month] IS NULL AND [Applicant Birth Year] IS NULL,"",[Applicant Birth Day]+"/"+[Applicant Birth Month]+"/"+[Applicant Birth Year])
+
+{"Ref":objDataModel[sFormName],"RefVer":sFormVer};
+
+49079-98008
+CreateExtAccnt
+"CreateExtAcct", "INVOKESVC", "IMMI ESC Applicants", "Workflow Process Manager", "RunProcess", "'ProcessName'", "'IMMI EAI ESC Applicant Create External Logon Process'", "'RowId'", "[Id]"
+
+"CreateExtAcct", "INVOKESVC", "IMMI ESC Applicants", "IMMI ESC Applicant Service", "CreateExtAccnt", "'RowId'", "[Id]"
+1-2274968114
+s_4_1_21_0_Ctrl
+Applicant must be converted to an Internal Applicant before sending Pathway Outcome information to SAP.
+
+49079-100840
+EventMethodNewForm
+
+
+E1: “Applicant must be converted to an Internal Applicant before sending Pathway Outcome information to SAP.”
+E2: “Pathway record of the correct type does not exist for the Applicant.”
+E3: “Pathway record with a valid [Outcome] and [Outcome Date] does not exist for the Applicant.”
+E4: “[Outcome Date] of the latest Pathway record is less than [Outcome Date] of the Pathway Outcome information already sent to SAP.””
+E5: “Pathway record with the same details has already been sent to SAP for the Applicant.”
+
+1-4821503  AAA017
+22222244
+ACCTEST01
+
+"Country", "Check For CrimTrac", "IIf([Form Name]='ESC',IIf([Country]=""AUSTRALIA"", ""Y"", ""N""),'')"
+11VB-1SQR
+
+"Country", "Boolean_002", "IIf([Country]=""AUSTRALIA"", ""Y"", ""N"")", "[Form Name]=""ESC"""
+"Country", "Check For CrimTrac", "IIf([Country]=""AUSTRALIA"", ""Y"", ""N"")", "[Form Name]=""ESC"""
+
+Parent: 'IMMI Web Form.Form Name'
+Expr: "IIf([Form Name]='ESC', 'Y', '')"
+
+Display Error
+
+	1-3935701007
+1-2334272439
+
+The ESC Case for the selected Pathway is set to '<parent Case Status>'. Please review ESC Case before sending to SAP.
+Filename exists, please choose a different attachment name.
+
+
+DIMAErrorCode#60015-ENTR00028: A SAP service error has occurred. The system is currently unable to process your request. Please try again. If this problem persists please contact IT Support.[DESB: SAP HTTPS Request] --- IMMI_SERVICE_ERROR: Please see details.(SBL-BPR-00131)
+-	A.10240.01.01
+1-1T385P4
+
+, oRegExp=/[\x0A]/g
+.replace(/[\x0A]/g,"<br/>")
+
+JSON.parse(immi.getRefDataFromSvr("DC","1","Internal","11VB-2PM4"))
+11VB-2PM4
+
+146257
+142959
+
+1-1TGMEZY
+Are you completing this declarable circumstances report for yourself?
+Are you completing this declarable circumstances report for yourself?
+
+immi.setProfileAttr("VBCState", "Query")
+IMMI+ESC+Web+Form+Access+View
+
+SWECmd=GotoView&SWEView=IMMI+External+Web+Form+Acknowledge+View&SWERF=1&SWEHo=pdcwdavas33.appdev.localdev
+http://pdcwdavas33.appdev.localdev/esc/start.swe?SWECmd=GotoView&SWEView=IMMI+Web+Form+Acknowledge+View&SWERF=1&SWEHo=pdcwdavas33.appdev.localdev
+
+Involvement in (or association with) any criminal, illegal or unlawful activity, regardless of whether you have been formally charged or convicted
+e.data.ctx.GetPM().SetProperty("PopupMode","Edit");
+this.SetProperty("PopupMode","New");
+
+changePopupClose: function(appletName){
+	            var oApplet = SiebelApp.S_App.GetActiveView().GetAppletMap()[appletName];
+	            if(oApplet)
+	            	var pm=oApplet.GetPModel();
+
+	            $("div[name=popup]").data("contextpm",pm).dialog({
+	            	close: function (evt, ui){
+	            		var pm = $("[name=popup]").data("contextpm");
+	            		//console.log(pm.Get("GetRecordSet"));
+	            		if(pm.ExecuteMethod("CanInvokeMethod","RefreshBusComp"))
+							pm.ExecuteMethod("InvokeMethod","RefreshBusComp");
+	            		//immi.refreshBusComp(appletName);
+	            	}
+	            });
+
+	            var popupMode = pm.Get("PopupMode")||"";
+	            console.log(popupMode);
+	            console.log(!$("div[name=popup]").data("InitDlg"));
+	            console.log($("div[name=popup]").data("context").GetPM().GetPMName());
+	            if(popupMode.length>0){
+
+	            	$("div[name=popup]").data("contextpm",pm).dialog({
+		            	beforeClose: function(evt, ui) {
+							if (!$("div[name=popup]").data("InitDlg")) {
+								if ($(evt.currentTarget, "[class*=ui-dialog-titlebar-close]").length > 0) {
+									var pm = $("[name=popup]").data("contextpm");
+									var popuppr = $("[name=popup]").data("context");
+									if (SiebelJS.Dependency("SiebelApp.Utils").Confirm("Click OK to discard unsaved data and close all popups.")) {
+										console.log("inside event handler:"+pm.Get("PopupMode"));
+										if(pm.Get("PopupMode")==="Edit"){
+											if(pm.ExecuteMethod("CanInvokeMethod","UndoRecord")){
+												pm.ExecuteMethod("InvokeMethod","UndoRecord");
+												pm.ExecuteMethod("InvokeMethod","WriteRecord");
+											}
+										}
+
+										popuppr.GetPM().OnControlEvent("ClosePopupByX", evt);
+										return true
+									}
+									return false
+								}
+							} else {
+								return false
+							}
+						}
+		            });
+	            }
+			}
+var util=TheApplication().oIMMI.util;
+var a=[1,"test",new Date(),[1,2,"bug",new Date(),[11,22,"bug test",true]],[11,33,{"a":12,"b":14}]];
+var ps=util.arrayToPS(a);
+console.log([ps].ObjToStr());
+
+var util=TheApplication().oIMMI.util;
+//var a=[1,"test",new Date(),[1,2,"bug",new Date(),[11,22,"bug test",true]],[11,33,{"a":12,"b":14}]];
+var a={"a":12,"b":"test",c:new Date()};
+var ps=util.jsonToPS(a);
+console.log([ps].ObjToStr());
+
+
+var util=TheApplication().oIMMI.util;
+var ps = TheApplication().NewPropertySet();
+var cps= TheApplication().NewPropertySet();
+var cps1= TheApplication().NewPropertySet();
+var cps2= TheApplication().NewPropertySet();
+var cps12= TheApplication().NewPropertySet();
+ps.SetProperty("test","name");
+cps.SetProperty("testchild","childname");
+cps.SetProperty("test2child","2childname");
+cps1.SetProperty("testchild1","childname1");
+cps12.SetProperty("testchild12","childname12");
+cps2.SetProperty("testchild2","childname2");
+cps1.AddChild(cps12);
+ps.AddChild(cps);
+ps.AddChild(cps1);
+ps.AddChild(cps2);
+var obj=util.psToJSON(ps);
+console.log(util.json.stringify(obj));
+
+var bs=TheApplication().GetService("IMMI ESC Web Form Utilities");
+var obj=bs.Pub_GetDCAppendList("DC","proxye","");
+console.log([obj].ObjToStr());
+
+(SiebelApp.S_App.GetAppName() == "Siebel Public Sector PRMPortal" && (SiebelApp.S_App.GetProfileAttr("User Organization") == "Serco" || SiebelApp.S_App.GetProfileAttr("User Organization") == "IHMS" || SiebelApp.S_App.GetProfileAttr("User Organization") == "IOTHS" || SiebelApp.S_App.GetProfileAttr("User Organization") == "Internal Organisation for Migration")) ? true : false;
+
+
+input#1_End_Date
+
+
+b.OnControlEvent(SiebelJS.Dependency("SiebelApp.Constants").get("PHYEVENT_COLUMN_BLUR"), b.Get("GetSelection")+1, b.controls["End Date"], "19/05/2017 18:50:00");
+"IMMI Entry Assessement Generate PDF".[Service_PreInvokeMethod].HTTP Request error during 'Submitting Data Send HTTP request': 'Status code - 500'(SBL-EAI-04117)
+http://pdcwtavas04:8180/soap/services/Immigration%20-%20IMA/Outgoing/RequestPrepop?wsdl&async=true
+
+IMMI YF 260517 JUN17 defect 166155
+
+
+Task=IMMI SRSS Create Allowance Modification TBUI
+
+49079-125033
+"TrigAutomation", "INVOKESVC", "IMMI ESC Applicants", "IMMI ESC Applicant Service", "AutomationTrig", "'Row Id'", "[Id]", "'BCName'", "'IMMI ESC Applicants'", "'Cus_Val'", "[IMMI Applicant Number]+'|'+[IMMI Applicant Type]"
+
+C8CGR
+
+PRCGC4
+InvokeServiceMethod("IMMI SWE Proxy Service", "RunService", "Business Service='IMMI ESC Applicant Service',Business Service Method='AutomationTrig',Id=eval([Id]),BCName='IMMI ESC Applicants'", "Outcome") = 1
+
+SEXAMRB
+EXAMRB
+
+IMMI eEvents Session Register View
+
+
+InvokeServiceMethod("IMMI ESC Applicant Service", "AutomationTrig", "Id=eval([Id]),BCName='IMMI ESC Applicants'", "Outcome") = 1
+
+[Applicant Category] = 'Internal Applicant' AND [Case Status] <> 'No Longer Required' AND  [Case Status] <> 'Created in Error' AND [DIMA Decision] <>  'ESC Not Eligible/Suitable' AND [DIMA Decision] <> 'Declarable Circumstances' AND [Status] <> 'No Longer Required' AND [Status] <> 'Created in Error' AND ([Outcome] = 'Granted' OR [Outcome] =  'Granted - Subject to Aftercare')
+
+PRAFAA or PREACG or PRNADA
+IMMI ESC Applicants Automation
+
+2*C1 11*FORM_STA_CD 2*N1 11*In Progress 2*O1 0*
+2*C1 6*STATUS 2*N 5*READY 2*O1 8*SELECTED
+2*C2 7*CASE_DT 9*STATUS_CD 2*N2 19*2015-05-04 03:16:11 6*Active 2*O2 0* 0*
+2*C316*EST_COST_EXCH_DT13*COMMENTS_LONG11*EVT_STAT_CD2*N319*2015-05-06 02:33:202*aa18*No Longer Required2*O30*0*17*Sent For Approval
+
+3*C1110*TEXT500_019*TEXT30_019*TEXT50_019*TEXT50_0210*TEXT255_016*EF_DAY8*EF_MONTH7*EF_YEAR6*ET_DAY8*ET_MONTH7*ET_YEAR
+3*N116*CHANGE5*Alias5*OT FN5*OT GN6*CHANGE2*012*024*19852*032*044*2000
+3*O110*0*0*0*0*0*0*0*0*0*0*
+
+InvokeServiceMethod("IMMI ESC Applicant Service","AutomationTrig","Id=eval([Id]),BCName='IMMI ESC Applicants'","Outcome")
+
+
+BS Outbound Communications Manager
+ Method ExpandCommTemplate
+
+ Args
+ CommTemplateName Adminstration-Communications ---> Template Name
+ SourceBusObj Originating Business Object name
+ SourceId Originating record ( data record) row id
+
+ HTMLExpandedText
+
+ The server is unable to verify your email address for access authorization.  Please contact the service department if you need further assistance.
+
+ Default ESC SMTP Profile
+
+ \\pdcwdavas33.appdev.localdev\Temp\1-1YSVZ11_ADM_-_IMMI_Web_Form_Admin_des.xml
+
+IMMI YF 270717 NOV17 - Added for DV1
+Phone Number (Business Hours):
+Vehicle Reg. Number:
+ http://localhost/start.swe?SWECmd=GotoView&SWEView=IMMI+DV+Web+Form+Switchboard+View
+
+ http://www.border.gov.au/FormsAndDocuments/Documents/1442i.pdf#search=privacy%20notice
+PickFld_045
+PickFld_001 PickFld_002
+
+<p>Are you planning on visiting with minor(s)? (children under 18 years of age)
+You must provide the details of any accompanying minors
+
+<span class='qlblbold'>Have you previously provided attachments for the person you are visiting?</span><p>You must provide the details of all controlled items</p>
+
+
+Are you planning on visiting with someone else who is also submitting their own visitor application?
+You must provide the details of any accompanying visitors
+
+<p>If you answered yes, please provide brief details in the space provided. The details should include the nature of the offence and the date that the conviction was recorded. An officer of the Department may contact you to further discuss your visitor application. </p>
+
+If you answered yes, please provide brief details in the space provided.  The details should include the nature of the offence and the date that the conviction was recorded.  An officer of the Department may contact you to further discuss your visitor application.
+
+<p>If you answered yes, please provide brief details in the space provided. The details should include the nature of the offence and the date that the conviction was recorded. An officer of the Department may contact you to further discuss your visitor application.</p>
+<p>If you answered yes, please provide brief details in the space provided. The details should include the nature of the offence and the date that the conviction was recorded. An officer of the Department may contact you to further discuss your visitor application.</p>
+
+Drug Acknowledgement - http://www.border.gov.au/AccessandAccountability/Documents/esc-drug-acknowledgement.pdf
+
+ESC Privacy Notice and General Consent - http://www.border.gov.au/AccessandAccountability/Documents/esc-privacy-consent.pdf
+
+Statutory Declaration - http://www.border.gov.au/AccessandAccountability/Documents/esc-statutory-declaration.pdf
+"{"Last Name":"abcd","First Name":"wety"}"
+
+I acknowledge that I am the responsible guardian for all minors specified above during the visit.
+
+Are you planning on bringing any controlled items during the visit?
+You must provide the details of all controlled items.
+PickFld_011
+IMMI DV Application Visit Purpose Picklist
+PickFld_046
+Proposed Visit Date & Time:
+Facility Name PickFld_047  PickFld_048  PickFld_049
+I agree to the Visitors Conditions of Entry.
+I agree the information I have provided as part of this application is true and correct.
+PickFld_012
+PickFld_013
+PickFld_010
+
+PickFld_014
+I have signed and attached the <a href='http://www.border.gov.au/AccessandAccountability/Documents/esc-drug-acknowledgement.pdf' target='_blank' id='p3l1' class='link'>Drug Acknowledgment Form</a>
+I have signed and attached the <a href='http://www.border.gov.au/AccessandAccountability/Documents/esc-drug-acknowledgement.pdf' target='_blank' id='p3l1' class='link'>Drug Acknowledgment Form</a>
+
+IMMI DV Web Form Professional App View
+
+
+PUB_GOV_CASE_SOURCE  Source
+
+
+
+IIF(([DIMA Birth Date Year] IS NOT NULL AND [DIMA Birth Date Month] IS NOT NULL AND [DIMA Birth Date Day] IS NOT NULL ),(Today() - [Birth Date Calc])/365 ,"")
+
+1614604.1
+
+IIf([Identity Source]=LookupValue('IMMI_DV_VISITOR_SOURCE','ImmiAccount'),"N","Y")
+
+
+objInBio["DIMA Title Text"]=oBc.GetFieldValue("Identity M/M");
+			objInBio["Last Name"]=oBc.GetFieldValue("Identity Last Name");
+			objInBio["First Name"]=oBc.GetFieldValue("Identity First Name");
+			objInBio["M/F"]=oBc.GetFieldValue("Identity M/F");
+			objInBio["DIMA Birth Date Day"]=oBc.GetFieldValue("Identity DOB Day");
+			objInBio["DIMA Birth Date Month"]=oBc.GetFieldValue("Identity DOB Month");
+			objInBio["DIMA Birth Date Year"]=oBc.GetFieldValue("Identity DOB Year");
+			log.info("Bio Details:"+[objInBio].ObjToStr());
+
+
+IIF([DIMA Birth Date Month] < [Current Month], [Age], IIF([DIMA Birth Date Month] = [Current Month] AND [DIMA Birth Date Day] <= [Current Day],[Age], [Age Minus]))
+
+
+IMMI Contact Phone Type Picklist
+IMMI DV Visitor Phone Usage Type Picklist
+
+
+11VW-2GI5
+
+11VW-2EQF
+
+
+switch(name){
+		case "EventMethodQAS_JSP":
+			//IMMI EXITYB 200114 CR11: Use the immi_global_library.js instead
+			top.immi.openQASWindow(this);
+			//top.IMMI.Utils.OpenQAS(this);
+			break;
+
+IMMI YF 030817 NOV17 - Added for DV1
+
+IMMI DV Related Clients
+
+
+Only numbers (0-9) and spaces are accepted in [Number].
+
+"Phone Number", "SSA Primary Field", "'Y'", "[Source] = 'User Created'"
+"Phone Number", "SSA Primary Field", "'Y'"
+
+
+EntityName
+PKFN
+Event Name
+Context
+Business Component Name
+
+"TrigMVGVldn", "INVOKESVC", "IMMI DV Visitor Identity", "IMMI Entity Validation Service", "VldnMVG", "'Id'", "[Id]", "'Business Component Name'", "'IMMI DV Visitor Identity'", "'EntityName'", "'IDENTITY'", "'Context'", "'IMMI Contact Identity Service'", "'PKF'", "[Contact Id]+'|Contact Id'"
+
+"TrigMVGVldn", "INVOKESVC", "IMMI DV Visitor Identity", "IMMI Entity Validation Service", "VldnMVG", "'Id'", "[Id]", "'Business Component Name'", "'IMMI DV Visitor Identity'", "'EntityName'", "'IDENTITY'", "'Context'", "'IMMI DV Visitor Service'", "'PKF'", "[Contact Id]+'|Contact Id'", "'Visitor Type'", "[Visitor Type]"
+
+
+[["DIMA Title Text","Last Name","First Name","M/F","DIMA Birth Date Day",
+			   "DIMA Birth Date Month","DIMA Birth Date Year"],
+			   ["Identity M/M","Identity Last Name","Identity First Name","Identity M/F","Identity DOB Day",
+			   "Identity DOB Month","Identity DOB Year"]
+			  ]
+{"Last Name":"abcd","First Name":"wety","M/F":"MALE","DIMA Birth Date Month":"10","DIMA Birth Date Year":"1996","DIMA Title Text":"Ms","DIMA Birth Date Day":"05"}
+
+
+
+<span class='qlblbold'>By selecting this tick box, I declare that:</span><ul><li>I have provided information that is complete, correct and up-to-date;</li
+•	I have completed this form with the assistance of another person, that the information as provided is true and correct and has been included with my full knowledge, consent and understanding;
+•	I have read the information contained in form 1442i Privacy notice;
+•	I understand the Department may collect, use and disclose my personal information  as outlined in form 1442i Privacy notice;
+•	I understand that if any fraudulent documents or false or misleading information has been provided with this application, or if I fail to satisfy the Minister of my identity, my application may be refused for entry to visit the immigration detention facility.
+
+
+
+I agree the information I have provided as part of this application is true and correct.<ul class='ul-declaration'><li>I have provided information that is complete, correct and up-to-date;</li><li>I have completed this form with the assistance of another person, that the information as provided is true and correct and has been included with my full knowledge, consent and understanding;</li><li>I have read the information contained in form 1442i Privacy notice;</li><li>I understand the Department may collect, use and disclose my personal information  as outlined in form 1442i Privacy notice;</li><li>I understand that if any fraudulent documents or false or misleading information has been provided with this application, or if I fail to satisfy the Minister of my identity, my application may be refused for entry to visit the immigration detention facility.</li></ul>
+<a href='http://www.border.gov.au/AccessandAccountability/Documents/esc-drug-acknowledgement.pdf' target='_blank'></a>
+
+
+By selecting this tick box, I:<p>declare that:</p><ul><li>I have read and understand the Conditions of Entry.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the Conditions of Entry.</li></ul><p>acknowledge that:</p><ul><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+
+11VW-2PU9
+
+
+Visitor Type
+[Visitor Type]='Minor'
+
+[&Error Message] IS NOT NULL OR [&Validation Error] IS NOT NULL
+
+
+Criminal History
+Non-compliance
+Security and Safety
+Suspicious Behaviour
+Other
+
+
+//validate the JSON property type
+		for(var p in objAssoc){
+			if(typeof objAssocProp[p] === "undefined" || objAssoc[p].ObjType !== objAssocProp[p])
+				throw "Please provide the correct JSON structure for Association object";
+		}
+
+		//check the assocation exists or not if required
+		//NOTE: Assume the field names will have parent Id field as the first element in array
+		//and address Id field as second element in array
+		//NOTE: it won't upsert any intersection table fields but pass back the row id of the
+		//intersection row and should do the upsert logic in the caller afterwards
+		if(util.isObjNotEmpty(objAssoc)){
+			if(sNewRec!=="Y"){
+				opObj["BO"]=objAssoc["BO"];
+				opObj["BC"]=objAssoc["BC"];
+				opObj["SearchSpec"]="["+objAssoc["FldNames"][0]+"]='"+objAssoc["Par Row Id"]+"'";
+				opObj["SearchSpec"]+=" AND ["+objAssoc["FldNames"][1]+"]='"+sAddrRId+"'";
+				log.info("Assoc Search spec:"+opObj["SearchSpec"]);
+				opObj["Fields"]=["Id"];
+
+				retArr=util.getBCField(opObj);
+				if(retArr.length>0)
+					sNewAssocRId=retArr[0]["Id"];
+			}
+			//need to create association
+			if(retArr.length===0){
+
+			}
+		}
+{"Address Line 1":"SHOP 1  23 ABERCROMBIE ST","City":"CHIPPENDALE","State":"NSW","Postal Code":"2008","Country":"AUSTRALIA"}
+
+((([Template Flag] <> 'Y' AND [Template Flag] <> 'P') OR [Template Flag] IS NULL)) AND ([Type] = 'Allowance' OR [Type] = 'Allowance Modifications') AND ([IMMI Task Template Flag] IS NULL OR [IMMI Task Template Flag] = 'N')
+
+
+[Type]='Accommodation and Care' AND [Status]='Active' AND EXISTS([Detention Managed By End Date] IS NULL)  1-14L89C
+
+
+11VW-2U5T
+
+
+System Error Notification
+
+I have read and understood the Privacy Notice
+Detention Visit Application Submission
+
+
+IMMI_SYS_ERR_NOTIF_GRP
+
+I acknowledge that I will accompany and supervise all minors specified at all times during the visit.
+I acknowledge that I am the responsible guardian for all minors specified above during the visit.
+
+
+<p>Are you seeking to visit an immigration detention facility with other personal adult visitors?</p><p>Note: Each accompanying adult visitors must submit their own application and are subject to individual approval</p>
+
+
+<span class='span-declaration'>I agree the information I have provided as part of this application is true and correct.</span><ul class='ul-declaration'><li>I have provided information that is complete, correct and up-to-date;</li><li>I have completed this form with the assistance of another person, that the information as provided is true and correct and has been included with my full knowledge, consent and understanding;</li><li>I have read the information contained in form 1442i Privacy notice;</li><li>I understand the Department may collect, use and disclose my personal information  as outlined in form 1442i Privacy notice;</li><li>I understand that if any fraudulent documents or false or misleading information has been provided with this application, or if I fail to satisfy the Minister of my identity, my application may be refused for entry to visit the immigration detention facility.</li></ul>
+
+I agree the information I have provided as part of this application is true and correct.<ul class='ul-declaration'><li>I have provided information that is complete, correct and up-to-date;</li><li>I have completed this form with the assistance of another person, that the information as provided is true and correct and has been included with my full knowledge, consent and understanding;</li><li>I have read the information contained in form 1442i Privacy notice;</li><li>I understand the Department may collect, use and disclose my personal information  as outlined in form 1442i Privacy notice;</li><li>I understand that if any fraudulent documents or false or misleading information has been provided with this application, or if I fail to satisfy the Minister of my identity, my application may be refused for entry to visit the immigration detention facility.</li></ul>
+
+<span class='span-declaration'>By selecting this tick box, I:</span><p>declare that:</p><ul class='ul-declaration'><li>I have read and understand the Conditions of Entry.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul class='ul-declaration'><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the Conditions of Entry.</li></ul class='ul-declaration'><p>acknowledge that:</p><ul class='ul-declaration'><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+siebel.system.admin@border.gov.au  IMMI Workflow Process Manager - Error
+
+1-1Z3ZSH9
+1-1Z3ZSHX
+
+1-1ZA0O15
+sNeedSend=Inputs.GetProperty("NeedSendMail");
+		sMailJobName=Inputs.GetProperty("MailJobName");
+		sMailObjId=Inputs.GetProperty("MailObjId");
+		sMailTo=Inputs.GetProperty("MailTo");
+		sMailCc=Inputs.GetProperty("MailCc");
+
+11VW-2VJT
+https://aihost:port/siebel/app/application_name/language
+
+
+<p>Are you seeking to visit an immigration detention facility with other personal adult visitors?</p><p>Note: Each accompanying adult visitors must submit their own application and are subject to individual approval</p>
+
+<p>Are you seeking to visit an immigration detention facility with other professional visitors?</p><p>Note: Each accompanying adult visitors must submit their own application and are subject to individual approval</p>
+
+
+<span class='span-declaration'>By selecting this tick box, I:</span><p>declare that:</p><ul class='ul-declaration'><li>I have read and understand the Conditions of Entry.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul class='ul-declaration'><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the Conditions of Entry.</li></ul><p>acknowledge that:</p><ul class='ul-declaration'><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+IMMI Web Form SwitchBoard Template
+IMMI ECMWF LDN URL - DV
+
+IMMI Public Web Form Portal Applet
+
+<span class='span-declaration'>By selecting this tick box, I:</span><p>declare that:</p><ul class='ul-declaration'><li>I have read and understand the Conditions of Entry.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul class='ul-declaration'><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the Conditions of Entry.</li></ul><p>acknowledge that:</p><ul class='ul-declaration'><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+http://pdcwdavas33.appdev.localdev/ecmform/start.swe?SWECmd=GotoView&SWEView=IMMI+DV+Web+Form+Switchboard+View
+
+You may only have a maximum of 10 draft 'Detention Visitor Applications' in progress. To create a new 'Detention Visitor Application', you must first delete or submit one of your existing draft applications.
+
+You must acknowledge that you have read and understood all disclaimers before proceeding to the next page
+
+1-4331611559
+[Id]=11VW-1RQO1-1P38DXR
+11VW-1RQN
+ siebel/custom/immi/oui/pr/immi_dv_visitor_address_list_applet_pm.js
+
+IIF([Calc ApplicationName] = 'Siebel Public Sector PRMPortal','External', IIF (ParentBCName()='IMMI Service',ParentFieldValue(Type),IIF (([Calc UserDivision]='Border Airport' OR [Calc UserDivision]='Border Seaport'),'Borders','')))
+IMMI DV Activity
+
+11VW-2HIF
+
+APPLICANT_ID
+[Task Status] <> LookupValue ("EVENT_STATUS", "Created In Error") AND ([Private]='N' OR ([Private]='Y' AND [Primary Owner Id]=LoginId()))
+[Application Status]<>'Created In Error' AND [Application Status]<>'No Longer Required' AND [Application Status]<>'Deleted By User'
+
+[Type]='Accommodation and Care' AND [Status]='Active' AND EXISTS([Detention Managed By End Date] IS NULL)
+IMMI DV Visit Detainee Summary List Applet
+
+IMMI DV Visit Visitors List Applet
+
+1-1LUFR
+1-4330384109
+
+1-4331611209
+1-1ZMXGLL  1-1ZMXGMW
+
+Trace_SADMIN_7524_9260.log
+
+
+1-1YUYE78  1-1ZN41VP
+
+"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+
+SetFieldValue("Entity_Vldn_Config", "BackgrndInvoke:Y|EntityName:CASE|BRPSwitchId:UpdateDVApplication|DisplayGUIErr:N");
+SetFieldValue("Entity_Vldn_CustomPS","Transaction:N");
+
+Transaction
+
+JOB_TITLE
+DIMA Contact Title Picklist
+
+IsInTransaction = 'true'
+keytool -keystore %JAVA_HOME%\jre\lib\security\cacerts -import -trustcacerts -alias dibp-certificate-chain -file dibp-certificate-chain.pem
+"C:/Apps/KDiff3/kdiff3.exe $BASE $LOCAL $REMOTE -m -o $MERGED"
+
+
+https://EXITYB@bitbucket:8443/scm/repo/siebel.git
+
+https://bitbucket:8443/scm/repo/siebel.git
+
+var bs=TheApplication().GetService("IMMI DV Visitor Service");
+var ps=TheApplication().NewPropertySet();
+ps.SetProperty("VisitorInJSONStr",'{"Winner":"1-1Z3ZSFA","Losers":["1-20IAY1C","1-20IAYGE"]}');
+bs.Auto_MergeVisitors(ps,TheApplication().NewPropertySet());
+//bs.Auto_MergeVisitors("11VW-30VT","11VW-30VN");
+
+
+
+Do you have any prior criminal convictions, either in Australia or overseas, involving sex offending?
+
+Do you have any prior criminal convictions, either in Australia or overseas, involving child sex offending?
+
+If you answered yes, please provide brief details in the space provided.  The details should include the nature of the offence and the date that the conviction was recorded.  An officer of the Department may contact you to further discuss your visitor application.
+
+
+If you answered yes, please provide brief details in the space provided.  The details should include the nature of the offence and the date that the conviction was recorded.  An officer of the Department may contact you to further discuss your visitor application.
+
+1-20NJ09X  1-1YTLQ4G
+
+
+
+User Profile Communications View
+1-5STJP 1-5OWHC
+
+
+By selecting this tick box, I declare that:
+<i>Conditions of Entry</i>
+
+
+<span class='span-declaration'>By selecting this tick box, I:</span><p>declare that:</p><ul class='ul-declaration'><li>I have read and understand the <i>Conditions of Entry</i>.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul class='ul-declaration'><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the <i>Conditions of Entry</i>.</li></ul><p>acknowledge that:</p><ul class='ul-declaration'><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+<span class='span-declaration'>By selecting this tick box, I:</span><p>declare that:</p><ul class='ul-declaration'><li>I have read and understand the Conditions of Entry.</li><li>I am not bringing any prohibited or controlled items into this facility.</li></ul><p>understand that: </p><ul class='ul-declaration'><li>failure to comply with the above conditions may result in refusal of entry to, or removal from, the immigration detention facility; and that any such failure may negatively impact the approval of any application I may make for future visits to this or any other immigration detention facility.</li><li>I agree to comply with the Conditions of Entry.</li></ul><p>acknowledge that:</p><ul class='ul-declaration'><li>the Department collects personal information from me and that I have been or obtained a copy of the Department's form 1442i Privacy notice. I consent to the collection, use and disclosure by the Department of my personal information, and the personal information of any accompanying minor of which I am the parent or guardian, for those purposes set out above and/or as described in form 1442i or as otherwise authorised or required by an Australian law.</li></ul>
+
+
+IMMI_AUDIT_FLDVAL_MAP
+1-4LOAJM2
+5b708ffe-c649-48d9-8670-70b401c66f7e
+https://e6-online.immi.gov.au/ecmform/start.swe?SWECmd=GotoView&SWEView=IMMI+DV+Web+Form+Switchboard+View
+https://e5-online.immi.gov.au/ecmform/start.swe?SWECmd=GotoView&SWEView=IMMI+DV+Web+Form+Switchboard+View
+https://onlinestage.immi.gov.au/ecmform/start.swe?SWECmd=GotoView&SWEView=IMMI+DV+Web+Form+Switchboard+View
+\\fdcwtavas03.apptest.localtest\Logs\tracelogs\
+
+1-4423950417
+
+
+exbsr6 or exityb or excbmc or exbtj1 or excbha
+IMMI Transaction Control Proxy Workflow|BRP_Vldn_Err~Numbers (0-9) are not acceptable in Family Name.(SBL-EXL-00151)
+
+We were seeing the same error in IE11 and Edge. A jQuery AJAX request was throwing the error XMLHttpRequest: Network Error 0x2ef3, Could not complete the operation due to error 00002ef3. consistently after exactly 300s. (Chrome & Firefox were fine)
+
+Turned out to be an idle timeout setting on our load balancer (F5 in our case). We managed to diagnose the issue using Fiddler, which resulted in a more helpful error message in the browser: Failed to load resource: the server responded with a status of 504 (Fiddler - Receive Failure) Note that with Fiddler running, we saw this error (after 300s) in all browsers, including Chrome and Firefox.
+IMMI DV Activity.Type
+
+E6
+Login through ImmiAccount
+Open IE Developer Tool (F12)
+Monitoring the Network ensuring the last http request is GET
+Waiting for 59 seconds and fire the http POST request
+see if the browser crashes.
+
+Notification of Approved Visit Application
+
+
+SIEBEL - BRNOV17 - TRACKING DEFECT - Detention Visitor Web Form Penetration Test
+
+146257
+3-10676291361
+2004550.1
+
+IMMI SP PUB HLS Incident Note View
+IMMI SPOUI PUB HLS Incident Note View
+Comm Body Template Picklist
+
+Detention Visits
+
+[Section Type] = LookupValue("COMM_TMPL_SECT", "Body") AND ([Created By] = LoginId () OR ([Public Flag] = 'Y' OR [Public Flag] = 'y')) AND ([Draft Status] = LookupValue ('TEMPLATE_STATUS', "Active") OR [Draft Status] Is Null )
+Today22Today.
+
+
+<span class='qlblbold'>Are you planning on bringing any <a href='https://www.border.gov.au/Busi/Comp/Immigration-detention/visiting-a-facility/items-not-permitted-in-immigration-detention' target='_blank'>controlled items</a> during the visit?</span>
+
+
+1-10041942679
+1-9885040991
+
+1-9898547640
+1-9898547640
+
+1-4331087216
+1-4384846719
+
+
+
+IMMI Group Process Service|mDVUpdateApplication|[IMMI Group Process Service].Service_PreInvokeMethod().mMethodExecute().mDVUpdateApplication()BRP_Vldn_Err~'Email Address' is a required field for the Application. Please enter a value for the field under the Application > Visitor Details tab.
+[Phone Number] OR [Mobile Number] is required for the Application. Please enter a value for at least one of these fields under the Application > Visitor Details tab.(SBL-EXL-00151)
+
+
+IMMI Group Process Service|mDVUpdateApplication|[IMMI Group Process Service].Service_PreInvokeMethod().mMethodExecute().mDVUpdateApplication()The value entered in field Process Status of buscomp IMMI DV Application does not match any value in the bounded pick list IMMI DV Application Process Status Picklist.(SBL-DAT-00225)
+.
+IMMI Group Process Service|mDVClientMerge|[IMMI Group Process Service].Service_PreInvokeMethod().mDVClientMerge().mDVClientMerge()This operation is not available for read only field 'Originated Parent Id'.(SBL-DAT-00402)
+1-9898514198  1-4JPBIFQ
+1-9898514358  1-4JPBIK6
+{"Winner":"1-4JPBIK6","Losers":["1-4JPBIFQ"]}
+
+[Id]=1-4JPBIK6 or [Id]=1-4JPBIFQ
+
+<span class='qlblbold'>Are you seeking approval to bring any <a href='https://www.border.gov.au/Busi/Comp/Immigration-detention/visiting-a-facility/items-not-permitted-in-immigration-detention' target='_blank'>controlled items</a> to the visit?</span>
+
+
+Are you seeking to visit an immigration detention facility with other visitors?
+Are you seeking to visit an immigration detention facility with other visitors
+Are you seeking approval to bring any controlled items to the visit
+
+"IMMI DV Visit Service"|[Service_PreInvokeMethod]|You must provide a [Phone Number] OR [Mobile Number] for the visitor before saving.(SBL-EXL-00151)
+
+
+<=Timestamp()+1 AND >=Timestamp()
+Perfbrnov17134898
+
+
+IMMI YF 181117 NOV17 eFix - Defect 171132
+1-4493863010
+1-4323226749  5/09/2017 4:30:10 PM - 6/09/2017 4:30:10 PM
+
+CX_S_CASE_X   SUB_STATUS_CD   Application Process Status
+CX_S_CASE_X   X_PROCESS_STATUS_DT   Application Process Status DT
+S_CASE          PR_AGENT_ID   Application Officer Id
+Requests w/n 24hrs - Adelaide ITA
+
+'IMMI DV Visits'.Search = "[Application Officer Id] IS NULL AND [Application Process Status]=""Received"" AND [Alternate Planned] IS NOT NULL AND [Alternate Planned]>=[Application Process Status DT] AND [Alternate Planned]<=[Application Process Status DT]+1 AND [Visit Location] LIKE ""Villawood IDC*"""
+'IMMI DV Visits'.Sort = "Created (DESCENDING)"
+
+'IMMI DV Visits'.Search = "[Application Officer Id] IS NULL AND [Application Process Status]=""Received"" AND [Alternate Planned] IS NOT NULL AND [Alternate Planned]>=[Application Process Status DT] AND [Alternate Planned]<=[Application Process Status DT]+1 AND ([Visit Location] LIKE ""CI IDC*"" OR [Visit Location] LIKE ""North West Point Immigration Facility*"")"
+'IMMI DV Visits'.Sort = "Created (DESCENDING)"
+
+
+
+You can use URL on IP17 like IP13 using Tomcat URL Rewrite Rule.
+To enable it,
+
+1. Open the URL rewrite file AI_ROOT\applicationcontainer\webapps\ROOT\WEB-INF\rewrite.config
+2. add a rule to the bottom of the file using the following syntax:
+
+RewriteRule ^/legacy_virtual_directory/start.swe?(.*)$ /siebel/app/IP2017_app_name/lang/$1 [L]
+
+ex) RewriteRule ^/callcenter_enu/start.swe?(.*)$ /siebel/app/callcenter/enu/$1 [L]
+
+3. restarting AI Tomcat
+
+After then, the URL https://siebelserver:9001/callcenter_enu/start.swe will become equivalent to https://siebelserver:9001/siebel/app/callcenter/enu/start.swe
+
+* Note to add "start.swe".
+
+Refer: IP2017 URL compatibility with previous versions ( Doc ID 2306194.1 )
+
+Best Regards,
+
+
+https://pdcwdavas44.appdev.localdev:4001/epublicsector_enu/
+
+^/callcenter_enu/(.*)$
+^/callcenter_enu/(.*)$
+RewriteRule ^/epublicsector_enu(/?)(start.swe)?(.*)$ /siebel/app/epublicsector/enu/$3 [NC,L]
+^/epublicsector_enu/((start.swe?)?)(.*)$
+^/epublicsector_enu(/?)(start.swe)?(.*)$
+
+BI Publisher Template Builder for Word
+C:\Users\exityb\AppData\Roaming\Microsoft\Word\STARTUP
+
+<Fld Name>:<Fld Val>|<Fld Name>:<Fld Val>
+HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\word\resiliency
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Word\Addins\HPTRIMOfficeAddIn.Connect
+
+
+\\pdcwtavas40.apptest.localtest\Logs\tracelogs\Trace_SADMIN_14076_9040.log
+
+1-1O0A50F
+A:\Apps\yuicompressor-2.4.7
+
+
+
+(InList("IMMI_Base_Internal", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_Base_Internal_RO", GetProfileAttrAsList("User Responsibilities"))) AND GetProfileAttr ("ApplicationName") <> 'Siebel Protected Portal' AND NOT InList(LoginName(), GetProfileAttr("IMMI Exclude Homepage Applet"))
+
+
+1-12FKWMC
+
+IMMI SLHS - Contact Base Client Case
+
+SELECT
+  SC.ROW_ID AS ROWID
+ ,ATTRIB_03 AS QUAL
+ ,ATTRIB_12 AS STARTDT
+ ,ATTRIB_13 AS ENDDT
+ ,SC.PAR_ROW_ID AS EMPID
+ ,SAP.EMP_NUM AS PERNUM
+ ,LOV.DESC_TEXT AS QUALDESC
+
+FROM
+  S_CONTACT_XM SC
+  INNER JOIN S_CONTACT SAP ON SAP.ROW_ID = SC.PAR_ROW_ID
+  LEFT OUTER JOIN S_LST_OF_VAL LOV ON LOV.NAME=SC.ATTRIB_03 AND LOV.TYPE = 'IMMI_SAP_SC_LEVEL'
+WHERE
+  SC.TYPE = 'SAP Employee SC' AND
+  SAP.X_SOURCE_CD = 'SAP'
+
+ORDER BY SAP.EMP_NUM, SC.ATTRIB_03
+
+
+
+IIF([IMMI Action BC RO]="Y" OR [IMMI SRSS Action BC RO]="Y","Y","N")
+IIf((([DIMA Is Done]="Y" OR  ([Type]="Travel Document"  AND [Status] <> "Draft") OR[IMMI NA Status RO]="Y" OR [IMMI Decision RO]) AND [Required Fields Done]="Y") OR [IMMI Community Detention RO] = "Y" OR [IMMI Client Activity Calc] = "Y","Y","N")
+
+=CONCATENATE(IF(8-LEN(A2)=4, "0000", IF(8-LEN(A2)=3,"000", IF(8-LEN(A2)=2,"00",IF(8-LEN(A2)=1,"0","")))), A2)
+IF(8-LEN(A2)=4, "0000", IF(8-LEN(A2)=3,"000", IF(8-LEN(A2)=2,"00",IF(8-LEN(A2)=1,"0","")))), A2
+
+CONCATENATE(MID(C2,4,2),"/",MID(C2,1,2),"/",MID(C2,7,4))
+CONCATENATE(MID(D2,4,2),"/",MID(D2,1,2),"/",MID(D2,7,4))
+
+
+For more information on completing this form please read the <a href='https://www.abf.gov.au/about-us/what-we-do/border-protection/immigration-detention/visit-detention/apply-to-visit' target='_blank' class='external-link'>Frequently Asked Questions (FAQ)</a>
+
+
+
+
+SELECT
+
+PATHWY.ROW_ID AS ROWID
+,COUNT(LOV.VAL) AS PATHWAYCOUNT
+FROM
+  SIEBEL.S_EVT_ACT PATHWY
+  INNER JOIN SIEBEL.CX_S_EVT_ACT_X PWX ON PWX.PAR_ROW_ID = PATHWY.ROW_ID
+  INNER JOIN SIEBEL.S_SUSP_ACT PWX2 ON PWX2.PAR_ROW_ID = PWX.PAR_ROW_ID
+  INNER JOIN S_CASE ESCCASE ON ESCCASE.ROW_ID = PWX2.CASE_ID
+  INNER JOIN S_CONTACT ESCAPP ON ESCAPP.ROW_ID = ESCCASE.APPLICANT_ID
+  LEFT OUTER JOIN S_CONTACT SAP ON ESCAPP.CON_INFLUNC_ID = SAP.PAR_ROW_ID
+  LEFT OUTER JOIN S_CONTACT_XM SC ON SC.PAR_ROW_ID = SAP.ROW_ID AND SC.TYPE='SAP Employee SC'
+  LEFT OUTER JOIN S_LST_OF_VAL LOV ON LOV.NAME = SC.ATTRIB_03 AND LOV.TYPE='IMMI_SAP_SC_LEVEL' AND LOV.ACTIVE_FLG = 'Y' AND PWX.X_ATTRIB_002 = LOV.DESC_TEXT
+WHERE
+  PWX.X_DECISION_TYPE_LIC = 'Security Clearance' AND
+  TEMPLATE_FLG = 'S' AND
+  ESCAPP.X_TYPE_CD = 'ESC Applicant' AND
+  SAP.EMP_NUM IS NOT NULL
+GROUP BY PATHWY.ROW_ID
+HAVING COUNT(LOV.VAL)=0
+
+
+
+
+-- Prepare Temp Table
+1) Data File :
+    1.1) Make sure the Grant Date and Expiry Date have the format MM/DD/YYYY
+
+2) Using Toad Import Wizard :
+  2.1) Create a new Table name as SAPPERSONQUAL, owner as SIEBEL
+  2.2) Import Data File (eg. SAPGrantDates.csv)
+  2.3) Make all columns have type of VARCHAR(50)
+
+-- Check created Table have all the columns and correct types
+describe table siebel.SAPPERSONQUAL
+
+-- Make sure it has the same number of record count as Data File.
+select * from siebel.SAPPERSONQUAL
+
+-- PreCheck before Update
+select B.EMP_NUM, A.ATTRIB_12, A.ATTRIB_13, C."PERNR", C."GrantDate", C."ExpiryDate"
+FROM SIEBEL.S_CONTACT_XM A, SIEBEL.S_CONTACT B, SIEBEL.SAPPERSONQUAL C
+WHERE A.PAR_ROW_ID = B.ROW_ID
+AND B.EMP_NUM = C."PERNR"
+AND A.ATTRIB_03 = C."Qualification"
+AND A.TYPE = 'SAP Employee SC'
+
+-- Fix - Update Start and End Date in Person Qualification
+UPDATE SIEBEL.S_CONTACT_XM A
+SET (ATTRIB_12, ATTRIB_13) =
+(select C."GrantDate", C."ExpiryDate"
+FROM SIEBEL.S_CONTACT B, SIEBEL.SAPPERSONQUAL C
+WHERE A.PAR_ROW_ID = B.ROW_ID
+AND B.EMP_NUM = C."PERNR"
+AND A.ATTRIB_03 = C."Qualification")
+WHERE A.TYPE = 'SAP Employee SC'
+AND A.ROW_ID IN
+(select A1.ROW_ID
+FROM SIEBEL.S_CONTACT_XM A1, SIEBEL.S_CONTACT B1, SIEBEL.SAPPERSONQUAL C1
+WHERE A1.PAR_ROW_ID = B1.ROW_ID
+AND B1.EMP_NUM = C1."PERNR"
+AND A1.ATTRIB_03 = C1."Qualification"
+AND A1.TYPE = 'SAP Employee SC')
+
+-- Check Results - Dates should be the same
+select B.EMP_NUM, A.ATTRIB_12, A.ATTRIB_13, C."PERNR", C."GrantDate", C."ExpiryDate"
+FROM SIEBEL.S_CONTACT_XM A, SIEBEL.S_CONTACT B, SIEBEL.SAPPERSONQUAL C
+WHERE A.PAR_ROW_ID = B.ROW_ID
+AND B.EMP_NUM = C."PERNR"
+AND A.ATTRIB_03 = C."Qualification"
+AND A.TYPE = 'SAP Employee SC'
+
+
+ESC Applicant Merge
+
+IMMI ESC Applicant Data Admin
+
+
+=VLOOKUP(D2,Sheet2!$A$1:$A$18940,1,FALSE)
+1-GK4MFWI
+
+
+IMMI Address Pick Applet
+
+IMMI SP Organization Activities View
+
+
+=CONCATENATE(IF(8-LEN(A2)=4, "0000", IF(8-LEN(A2)=3,"000", IF(8-LEN(A2)=2,"00",IF(8-LEN(A2)=1,"0","")))), A2)
+
+=CONCATENATE(MID(C2,4,2),"/",MID(C2,1,2),"/",MID(C2,7,4))
+
+
+=VLOOKUP(A1,Sheet1!$A$1:$D$19797,1,FALSE)
+
+
+=CONCATENATE("'",A1,"',")
+
+
+siebel/commpanelprenderer
+
+
+SWE_OUI_RENDERER  CommunicationPanelPR
+
+immi_communicationpanelpr_override
+
+*All Active Non ESC Applicants
+'IMMI SAP Employee'.Search = "[IMMI Applicant Number] IS NULL AND [Primary SAP Employment Status Code] = '3' AND [Primary SAP Employee Sub Type Code] <> 'LD' AND [Primary SAP Employee Sub Type Code] <> 'LE' AND [Primary SAP Employee Sub Type Code] <> 'TR'"
+'IMMI SAP Employee'.Sort = ""
+
+Locally Engaged Des  LD
+Locally Engaged O/S  LE
+Traveller  TR
+
+ATTRIB_05
+Expr:"IIF ((GetProfileAttr("ActiveViewName") = "WT Repository User Key Attribute Join Flat List View"), ""Y"", ""N"")"
+
+IIF((InList("IMMI_SRSS", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_RO", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_Admin_Officer", GetProfileAttrAsList("User Responsibilities"))), "Y","N")
+
+
+Expr:"IIF ((GetProfileAttr(""IsOpenUI"")="1"), ""Y"", ""N"")"
+
+Expr:"IIF((InList("IMMI_SRSS", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_RO", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_Admin_Officer", GetProfileAttrAsList("User Responsibilities"))), ""Y"",""N"")"
+
+Expr:"IIF((InList('IMMI_SRSS', GetProfileAttrAsList('User Responsibilities')) OR InList('IMMI_SRSS_RO', GetProfileAttrAsList('User Responsibilities')) OR InList('IMMI_SRSS_Admin_Officer', GetProfileAttrAsList('User Responsibilities'))), 'Y','N')"
+
+
+IMMI Admin Sales Tools List - Admin Mode
+
+IMMI Literature List Administration Applet or IMMI Literature Entry Administration Applet
+IMMI YF 250319 defect 201183 - add for SRSS user
+
+Expr:"IIF((InList("IMMI_SRSS", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_RO", GetProfileAttrAsList("User Responsibilities")) OR InList("IMMI_SRSS_Admin_Officer", GetProfileAttrAsList("User Responsibilities"))), ""Y"",""N"")"
+
+IMMI SRSS Admin Checkbox Calc
+IMMI SRSS Internal Literature Admin List Applet
+IMMI SRSS Internal Literature Admin Form Applet
+
+Add View RO to IMMI_SRSS_RO resp
+https://pdcwnbvas115.dinnp.bcz.gov.au/ecm/app/epublicsector/enu?SWECmd=GotoView&SWEView=IMMI+SRSS+SP+Admin+Sales+Tools+List&SWERF=1&SWEHo=pdcwnbvas115.dinnp.bcz.gov.au&SWEBU=1
+SRSS Show Lit RO Calc
+
+"javax.xml.xpath.XPathFactory:http://saxon.sf.net/jaxp/xpath/om","net.sf.saxon.xpath.XPathFactoryImpl"
+-Djavax.xml.xpath.XPathFactory:http://saxon.sf.net/jaxp/xpath/om=net.sf.saxon.xpath.XPathFactoryImpl
+
+S_AGR_TERM_TMPL
+
+S_ALERT_CUT
+EXT_ALERT_ID - row id 450
+
+COMMENTS - comments 255
+TYPE_CD - type 30
+CLOSE_DT - processed date datetime
+STATEMENT_NUM - Winner Id
+GEN_TYPE_CD - loser id
+NAME - merge type 75  LOV bounded
+
+IMMI_MERGER_BIZ_AREA  IMMI Data Admin Merger Biz Name Picklist
+
+S_AMGR_PRFL
+
+
+S_AMGR_RL_SET
+
+
+S_APPLNT_GRP
+
+
+Error running sub-process 'IMMI EAI Web Service Request Response Process' at step 'Generic WS Process'.(SBL-BPR-00183)
+--
+(SBL-BPR-00131)
+--
+DIMAErrorCode#60015-IMMI_SERVICE_ERROR: Please see details. --- FRWK00022: Schema validation error. cvc-simple-type 1: element {http://www.immi.gov.au/Namespace/PersonIdentity/Core/V1.0}SecurityClearanceLevelType of type {http://www.immi.gov.au/Namespace/PersonIdentity/Core/V1.0}securityClearanceLevelTypeType may not be empty[DESB: ESB_Services](SBL-BPR-00131)
+
+
+EventMethodProcess
+
+
+[Business Area Name]='' AND ([Process Status]='Created' OR [Process Status]='Error')
+
+
+In the later versions 8.1.1.14 (IP 2014) onward,  the "Allow File System Access" system preference is replaced by 2 other preferences that target runtime business service and compiled business service:
+
+Runtime Scripts System Access (default is false)
+
+Compiled Scripts System Access (default is true)
+
+
+Doc ID 1594198.1
+
+IMMI AMS Exception Select Clients List Applet
+
+
+IMMI Web Form Case Decision
+IMMI Web Form Case Decision/Employee
+
+1-2LPAVEO or 1-2LPAVEN or 1-2LP7O4Q or 1-2LP7O4P
+1-2LOMIUY or 1-2LOQ5LD or 1-2LOQ5LX or 1-2LOQR1I
+
+IMMI ESC Applicants Pick Employee
+ATTRIB_45
+[Employment Status]='Active' AND [External Organisation] IS NULL AND EXISTS ([Responsibility]='IMMI_Base_RPC_Transfer')
+
+IMMI YF 150519 - Added for Medevac P1
+
+System: CreatorId
+Expr: "GetProfileAttr('First Name')+' '+GetProfileAttr('Last Name')"
+
+
+
+Last Name
+
+IMMI Position Number
+DIMA Section
+DIMA Location
+Division
+1-2LQ3EL0
+IMMI Email Recipient Assoc Applet or CUT Account Contact Assoc Applet
+
+1-2LPO94B
+
+Primary Team Member Id
+IMMI Case Lead Team MVG Applet
+
+IMMI Med Transfer Medical Advisor Creation Applet
+CreateInterRec
+
+CSSSWEFrameListAssoc
+IMMI Med Transfer Client Pick Applet
+
+IMMI Med Medical Advisor MVG Applet
+
+SR Contact Pick Applet
+
+EventMethodCreateInterRec
+CreateInterRec
+srf1557970349_442
+
+
+Recent Record Name Calc
+"IMMI Med Transfer Creation Popup Applet"|[WebApplet_InvokeMethod]|ReferenceError:Cannot operate on null object
+
+WebApplet.WebApplet_InvokeMethod line: 26
+WebApplet.WebApplet_PreInvokeMethod line: 80
+
+IIF([Given Name] IS NOT NULL OR [Family Name] IS NOT NULL,[Given Name]+' '+[Family Name],'')
+
+IMMI Med Transfer Client Pick Applet
+
+clinical.team@homeaffairs.gov.au; ihap@homeaffairs.gov.au; kathy.karakousis@homeaffairs.gov.au; lila.caplice@homeaffairs.gov.au; ben.willis@homeaffairs.gov.au; rpc.clinical.assurance@homeaffairs.gov.au;
+
+The selected Treating Doctor is already associated to the Transfer. Please choose another Treating Doctor to continue.
+
+A Treating Doctor already exists for the 'Registration Number' specified. Please enter a unique 'Registration Number' to continue.
+ARRANT_STATUS", "Spoiled") OR [Warrant Status] = LookupValue("IMMI_WARRANT_STATUS", "Cancelled"),  "Y", "N")
+IIF([Sub Type]="Medical", "Y", "N")
+IIf([Sub Type]="Medical","Y","N")
+Admin Group
+
+DeleteRecords
+DeleteAllRecords
+DeleteAllSelRecords
+
+(([Template Flag]<>'Y' AND [Template Flag]<>'P') OR [Template Flag] IS NULL) AND ([Opportunity Id] IS NULL OR [Opportunity Secure Flag]='N' or [Secure Opty Id] IS NOT NULL) AND ([Type]<>'Participant' AND [Type]<>'Damage' AND [Type]<>'Alerted' AND [Type]<>'Decision' AND [Type]<>'Admin Actions' AND [Type]<>'Analysis' AND [Type]<>'Referral' AND [Type]<>'Incident' AND [Type]<>'Maintenance Allowance' AND [Type]<>'Use of Force' AND [Type]<>'Use of Restraints' AND [Type]<>'Injuries Sustained' AND [Type]<>'Client Contact' AND [Type]<>'Appointment' AND [Type]<>'Allowance' AND [Type]<>'Allowance Modifications') AND ([IMMI Task Template Flag] IS NULL OR [IMMI Task Template Flag]="N") AND [Template Flag]<>'Q' AND [Template Flag]<>'R' AND [Template Flag]<>'D' AND [Template Flag]<>'E' AND [Template Flag]<>'F' AND ([Parent Template Flag] IS NULL OR ([Parent Template Flag]<>'E' AND [Parent Template Flag]<>'I')) AND [Incident Id] IS NULL AND [Template Flag]<>'I'  AND [Type]<>'Intel Email - Outbound'
+
+
+Primary DIMA Identity Id
+Subject Contact Identity Primary Given Name
+Subject Contact Identity Primary Contact Family Name
+Subject Contact Identity Primary Contact Given Name
+
+
+=IF(H3="","",TEXT(H3,"DD/MM/YYYY"))
+=TEXT(H3,"DD/MM/YYYY")
+Born in Port Moresby
+
+
+      T2.ATTRIB_08,
+      T2.X_ATTRIB_111,
+      T2.X_ATTRIB_112,
+      T4.X_LAST_NAME,
+      T4.X_FST_NAME,
+      T4.X_BIRTH_DATE_DAY,
+      T5.X_IMMI_BOAT_ID,
+      T3.X_ICSE_ID,
+
+sdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfsadfsadfsadfsdfasdfs
+
+IMMI GP - My Process Records View
+
+83364307796
+
+Purpose of transfer
+Purpose of transfer
+
+(([Template Flag]<>'Y' AND [Template Flag]<>'P')) AND ([Opportunity Id] IS NULL OR [Opportunity Secure Flag]='N' or [Secure Opty Id] IS NOT NULL) AND ([Type]<>'Participant' AND [Type]<>'Damage' AND [Type]<>'Alerted' AND [Type]<>'Decision' AND [Type]<>'Admin Actions' AND [Type]<>'Analysis' AND [Type]<>'Referral' AND [Type]<>'Incident' AND [Type]<>'Maintenance Allowance' AND [Type]<>'Use of Force' AND [Type]<>'Use of Restraints' AND [Type]<>'Injuries Sustained' AND [Type]<>'Client Contact' AND [Type]<>'Appointment' AND [Type]<>'Allowance' AND [Type]<>'Allowance Modifications') AND ([IMMI Task Template Flag] IS NULL OR [IMMI Task Template Flag]="N") AND [Template Flag]<>'Q' AND [Template Flag]<>'R' AND [Template Flag]<>'D' AND [Template Flag]<>'E' AND [Template Flag]<>'F' AND ([Parent Template Flag] IS NULL OR ([Parent Template Flag]<>'E' AND [Parent Template Flag]<>'I')) AND [Incident Id] IS NULL AND [Template Flag]<>'I' AND [Type]<>'Intel Email - Outbound' AND [Bus Area]='Generic'
+
+
+[Decision Description] + [Referral Referring Area] + [Follow Up Initiated By]
+[Decision Description Acuity] + [Decision Description Approach] + [Decision Description CA] + [Decision Description CPR] + [Decision Description Compliance] + [Decision Description ICI] + [Decision Description MCP17] + [Decision Description 2]
+
+
+Notification to RPC Taskforce advising of valid notification
+System Generated Email
+
+
+In addition, the investigation shows there is another issue with all the caller BCs (Attachment BC calling the IMMI TRIM Functions to check the file extension) that the error message including validation errors are not handled as per the error handling standards, which may cause the system errors are not logged into our error handling tables and technical jargons are displayed to the end users straightaway.
+
+We need to raise a TQA tracking defect to address this potential Production issue. Hopefully it can be fixed as soon as possible.
+
+
+[Filter]{
+TableName:BUG,
+ColumnName:BG_RESPONSIBLE,
+LogicalFilter:\0000001a\exityb or exbsr6 or excfyb,
+VisualFilter:\0000001a\exityb or exbsr6 or excfyb,
+SortOrder:1,
+SortDirection:0,
+NO_CASE:
+}
+{
+TableName:BUG,
+ColumnName:\00000013\BG_USER_TEMPLATE_37,
+LogicalFilter:\00000017\"Siebel JUN19 - eFixes",
+VisualFilter:\00000017\"Siebel JUN19 - eFixes",
+NO_CASE:
+}
+[Grouping]{
+ColumnName:BG_RESPONSIBLE,
+GroupOrder:1
+}
+
+Notification of Successful Submission of Employment Suitability Questionnaire
+
+%SystemRoot%\Installer\{BE58AD6C-D57C-4A21-8428-D87BA22E6D70}\trim.exe
+
+Contact Team Mvg Applet
+Psychological and Physical
+CA – Notification External: Transfer Request Approved by Minister (First Decision)
+
+
+Contact Team Mvg Applet
+
+rpc.clinical.assurance@homeaffairs.gov.au; sneha.chatterjee@abf.gov.au; rpc.hlo@abf.gov.au; joe.feld@abf.gov.au; regional.processing.taskforce@homeaffairs.gov.au; bridget.o'brien@abf.gov.au; katrina.alexander@homeaffairs.gov.au; rpc.coord@homeaffairs.gov.au; png.program@homeaffairs.gov.au; david.wootton@homeaffairs.gov.au; justine.pederson@homeaffairs.gov.au
+
+
+FOR REVIEW: Out of Session TPC - Request for recommendation - Medical transfer - Nauru to Australia - [Title] [Given Name] [Family Name]  (DOB: [Date
+
+IMMI 280819 YF - Added for Record History Ref Data
+215502530
+1585502489
+
+
+IMMI Client Contacts Popup Applet
+
+InvokeServiceMethod("IMMI BIP Report Cache Utilities", "LoadBIPDecisionRefMapping", "Decision Name='" +[IMMI Decision Type]+"', Version Id='"+[Version Id]+"'", "Excute Report Name")
+
+dev_exityb_020919_rechistadmin
+
+
+Employee Full Name,Field,New Value,Operation,Operation Date,Business Component,Record Id
+
+
+1141972
+
+Take Id of Employee Associated to Position and Assign to Referral
+
+IMMI Group Process Service|mSecureCardCreate|[IMMI Group Process Service].Service_PreInvokeMethod().mMethodExecute().mSecureCardCreate()Create Card Address step failed for [Card Row Id] = 1-5EGD1MI. Error updating business component at step '<?>'.(SBL-BPR-00187)
+91515010620
+
+
+DIMA_CM_INDICATOR_TYPE
+
+18/06/2019 09:44:01
+18/06/2019 09:44:01
+
+D:\Siebel\SES\siebsrvr\XMLP\REPORTS;\\PDCWNBVAS114\Integration\IMASecureCard\Outbox\Card_orders;\\PDCWNBVAS114\Integration\hspexport;\\PDCWNBVAS114\Integration\xslt;\\PDCWNBVAS114\Integration\Stubbing;\\PDCWNBVAS114\Logs\tracelogs;\\PDCWNBVAS114\Logs\debu
+
+
+content: "\e647"
+
+IMMI Record History Popup List Applet
+IMMI All Services Form Applet
+IMMI Service Header Applet
+IMMI Service Header - Client Version Applet
+Service History
+Service Record History
+
+IMMI YF 250919 NOV19 - Added for Service Team History
+
+
+17/04/2012 10:00:00 AM
+
+
+IIF(([Status] = LookupValue('IMMI_SERVICE_STATUS', 'Finalised') OR [Status] = LookupValue('IMMI_SERVICE_STATUS', 'Created In Error')) AND ([Common_14] = 0) AND [Compliance Finalised Fields RO Calc] = 'Y', 'Y', 'N')
+
+
+IIF([Common_59] is null AND [Compliance Finalised Fields Auto Pop Calc] = "Y", 'N', 'Y')
+IIF([Common_80] is NOT NULL AND [Common_81] is NOT NULL AND [End Date] is NOT NULL AND [Status] = 'Finalised' AND [Type] = 'Compliance Status Resolution', 'Y', 'N')
+
+CustomMethods
+
+EventMethodRecHist
+
+
+RecClientNotes
+
+21/10/19		YF		Defect 1163925 - remove the custom logic for ShowPopup as Record Client Notes
+ *						button is disabled
+
+
+ IMMI YF 211019 NOV19 - Added for Record History
+
+position: absolute;
+    top: 4px;
+    height: 30px;
+    line-height: 30px;
+    right: 60px;
+
+li
+	     background-color: transparent;
+    border-right: 0;
+
+1-240PAOB  43236031135
+ 1-23UWVLZ
+ https://pdcwnbvas115.dinnp.bcz.gov.au/ecm/scripts/siebel/custom/QASWrapper/QASWrapper.htm#http://pdcwnbvas115.dinnp.bcz.gov.au:8080/proweb/siebelQAS.jsp?SiebelId=1-2S3DTRJ&CountryCode=AUS&BusComp=IMMI%20CD%20Property&SiebelURL=https://pdcwnbvas115.dinnp.bcz.gov.au/ecm/scripts/siebel/custom/QASWrapper/QASResultProcessor.htm&SessionId=
+
+82319005440
+ 1-J77PWN
+
+siebelMessage.SetProperty("Stage", TheApplication().InvokeMethod("LookupValue", "IMMI_SERVICE_STAGE", "Level 1 - Monitor"));
+
+1-2SZUSBX  1851466132
+ [Id]='1-13WNIW'
+
+"Last CPAT", "Common_149"
+ Common_149
+ Case Id
+
+
+ System: Creator
+
+ System: CreatorId
+
+1-5653292447
+ 125e5abe-b3cf-412e-96d2-3f6ed088fc55
+
+ StartOF
+
+
+ https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/esc/enu?SWECmd=GotoView&SWEView=IMMI+Web+Form+Acknowledge+View&SWEBU=1&SWEApplet0=IMMI+Web+Form+Acknowledge+Applet&SWERowId0=1-2LHTOD4&Form=DPA&ParRowId=
+
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/esc/enu?SWEApplet0=IMMI+Web+Form+Acknowledge+Applet&SWEBU=1&SWECmd=GotoView&SWEBHWND=&SWEView=IMMI+Web+Form+Acknowledge+View&ParRowId=1-2LIXIF7&RowId=&Form=DPA
+
+chrome://flags/#allow-insecure-localhost
+
+ Doc ID 975515.1 postload customisation is fix in 19.2
+ Doc ID 2335843.1 need to import the testscript import workflow from vanilla env.
+ need to get CA signed DISA cert
+
+QAPortType
+
+https://pdcwnbvas113.dinnp.bcz.gov.au/ecm/app/esc/enu?SWECmd=GotoView&SWEView=IMMI+ESC+Web+Form+Access+View
+ Cache Test
+1-10DMRZ
+
+C:\Siebel\DISA\jre\lib\security\cacerts
+keytool -import -noprompt -trustcacerts -alias intermediate -file "C:\Siebel\DISA\DIBP Internal Production Intermediate CA.pem.cer" -keystore "C:\Program Files (x86)\Java\jre1.8.0_60\lib\security\cacerts" -storepass changeit
+
+keytool -import -noprompt -trustcacerts -alias root -file "C:\Siebel\DISA\DIBP Internal Production Root CA.pem.cer" -keystore "C:\Program Files (x86)\Java\jre1.8.0_60\lib\security\cacerts" -storepass changeit
+
+IMMI Intel Employee Mvg Applet
+
+keytool -import -noprompt -trustcacerts -alias e4admin -file "C:\Siebel\DISA\fdcwnbvas107.dinnp.bcz.gov.au.pem.cer" -keystore "C:\Program Files (x86)\Java\jre1.8.0_60\lib\security\cacerts" -storepass changeit
+
+-Djavax.net.ssl.trustStore=$JENKINS_HOME/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit
+
+<arguments>-Djavax.net.ssl.trustStore=C:\Program Files (x86)\Java\jre1.8.0_60/jre/lib/security/cacert -Djavax.net.ssl.trustStorePassword=changeit -Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war"</arguments>
+
+-Djavax.net.ssl.trustStore=$JENKINS_HOME/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit
+http://u7018462.dinnp.bcz.gov.au:8080/
+
+
+
+The business requirements are in the TRIM (ADD2019/7341338). The description is the extract from the TRIM document.
+
+From SSA perspective,
+
+IA has to be done to find out all the references of Australian Citizenship Certificate currently in the ESC online form
+BA engage the business and confirm all the references needs to be updated and the wording they want to use (if different from the highlighted text)
+BA updates the relevant specs accordingly
+Developer implement the cosmetic changes
+Testing is required
+
+All the technical changes and spec updates need to be retrofitted as per the out-of-cycle BAU process.
+
+
+IMMI Incident Participant Assoc Applet
+
+[Contact Type] = 'Internal Contact' OR ([Contact Type] = 'Siebel Internal Contact' AND ([Intel Protected Flag] is null OR [Intel Protected Flag] = 'N')) OR [Contact Type] = 'External Contact' OR [Employee Flag] = 'Y'
+GetProfileAttr("User List SS")
+
+[Name]='DOR' OR [Name]='DPA'
+
+1023696
+
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/webforms/enu?SWECmd=GotoView&SWEView=IMMI+Web+Form+Acknowledge+View&SWEApplet0=IMMI+Web+Form+Acknowledge+Applet&RowId=&Form=DPA&ParRowId=1-2LIXJJ7&SWEBU=1
+PSCcObjMgr_Webform
+
+IMMI 170220 YF - Created for Internal Web Form
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/webforms/enu?SWECmd=GotoView&RowId=&Form=DPA&ParRowId=1-2LIXJJ7
+
+https://e6-portals.immi.gov.au/ecm/app/epublicsector/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&SWEApplet0=IMMI+Internal+Web+Form+Acknowledge+Applet&RowId=&Form=DPA&ParRowId=1-2LIXJJ7
+
+https://e5-portals.immi.gov.au/ecm/app/serviceproviderportal/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&SWEApplet0=IMMI+Internal+Web+Form+Acknowledge+Applet&RowId=&Form=DPA&ParRowId=1-2LIXJJ7
+
+1-2L81N9U
+
+//MF POC
+		oBSHTTPOut.Reset();
+		oBSHTTP.InvokeMethod("GetAllRequestParameters",oBSHTTPIn,oBSHTTPOut);
+		log.info("Request parameters:"+[oBSHTTPOut].ObjToStr());
+
+scripts/siebel/custom/immi/oui/config/IMMIToolTip.json
+
+[Contact Type] = 'Internal Contact' OR ([Contact Type] = 'Siebel Internal Contact' AND ([Intel Protected Flag] is null OR [Intel Protected Flag] = 'N')) OR [Contact Type] = 'External Contact' OR [Employee Flag] = 'Y'
+
+SR Contact Pick Applet  CSSSWEFrameListPick
+
+
+[Id]='1-2LGUFAZ' AND [IHMS Review Date]<Today()+42
+
+
+Involvement in Criminal or Illegal Activities
+
+
+IMMI YF 050320 FEB20 eFix - Fix QC 201792
+Comm Personal Profile Picklist
+
+1-6579880220
+
+EmailSend
+
+Communications/MapiProfile
+
+IMMI_COMM_PROF_CODE
+EIM_DMNDCRTPRG
+
+LookupValue('IMMI_COMM_PROF_CODE', Preference('Communications','MapiProfile'))
+
+https://pdcwnbvas113.dinnp.bcz.gov.au/ecm/app/webforms/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&ParRowId=&RowId=1-2LJ9UVJ&Form=DPA
+
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/internalecmform/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&ParRowId=&RowId=1-2LBKO53&Form=DPA
+
+system pref 1= https://pdcwnbvas114.dinnp.bcz.gov.au/
+system pref 2= ecm/app/internalecmform/enu?
+
+system pref 3= SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&
+calc fld 1= ParRowId=&RowId=[Id]&Form=[Form Name]
+
+calc fld link = system pref 1 + system pref 2 +system pref 3 + calc fld 1
+
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/epublicsector/enu?SWECmd=GotoView&SWEView=IMMI+Decisions+Online+Form+View&SWERF=1&SWEBU=1&SWEApplet0=IMMI+Case+Decision+Form+Applet&SWERowId0=1-32FUCIG
+
+https://e6-portals.immi.gov.au/ecm/app/epublicsector/enu?SWECmd=GotoView&SWEView=IMMI+Decisions+Online+Form+View&SWERF=1&SWEBU=1&SWEApplet0=IMMI+Case+Decision+Form+Applet&SWERowId0=1-5ERT77Q
+
+Governance and Coord SMTP Profile
+Detention Visitors No Reply Profile
+IMMI Decisions Group Online Form View
+
+[IMMI Decision LIC]='CPAT'
+
+InvokeServiceMethod("IMMI BIP BO Report Utilities", "BORptTemplateFilter", "UserId='"+LoginId()+"'", "Filter")
+Minister for Home Affairs key decisions/announcements
+IMMI User Comm Profile
+
+//YF POC:set the From field to blank if there are more than one options available
+		var picklistBC = this.BusComp().GetPicklistBusComp("Calculcated Email Sender Display Name");
+		with(picklistBC){
+			ClearToQuery();
+			ExecuteQuery(ForwardBackward);
+			var count = CountRecords();
+			if(count>1)
+				this.BusComp().SetFieldValue("Calculcated Email Sender Display Name","");
+		}
+
+IMMI_DEC_WEBFORM_CODE
+IIf(ParentFieldValue("Web Form Name") IS NOT NULL, "Y", "N")
+69570034853
+IMMI Online Form List Applet or IMMI DPA Web Form List Applet
+
+IMMIEnableShowHide
+
+IMMI DPA Form Attachment List Applet or Activity Attachment Applet
+
+ IMMI Case Decision Form Applet
+
+ Logoff
+
+
+ form[name='validation-error-form']{
+  height: inherit;
+}
+
+( LIKE "IMMI Intel Homepage My Activity List Applet*" OR  = "IMMI Intel Homepage My Task List Applet")
+IMMI 27/03/2020 EXITYB: Added for Task Tracking Project
+IMMI 27/03/2020 EXITYB: Task Tracking Project
+
+GetProfileAttr ("ApplicationName") = 'Siebel Protected Portal' AND NOT InList(LoginName(), GetProfileAttr("IMMI Exclude Homepage Applet")) AND NOT InList("IMMI_Executive_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_Executive_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_NCM_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_NCM_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities"))
+
+GetProfileAttr ("ApplicationName") = 'Siebel Protected Portal' AND NOT InList(LoginName(), GetProfileAttr("IMMI Exclude Homepage Applet")) AND NOT InList("IMMI_Executive_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_Executive_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_NCM_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_NCM_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_Diary_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_Diary_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_MBC_Task_Officer", GetProfileAttrAsList("User Responsibilities")) AND NOT InList("IMMI_MBC_Task_Officer_RO", GetProfileAttrAsList("User Responsibilities"))
+
+
+GetProfileAttr ("ApplicationName") = 'Siebel Protected Portal' AND NOT InList(LoginName(), GetProfileAttr("IMMI Exclude Homepage Applet"))
+
+
+'IMMI Executive Task'.Search = "[Planned Completion Date] < timestamp()  [Planned Completion Date] IS NOT NULL AND ([Status] = ""Open"" OR [Status] = ""Continuing"")"
+'IMMI Executive Task'.Sort = ""
+Date TimeNoSec
+
+<LOV>
+			<Developer>YF</Developer>
+			<Type>IMMI_EXEC_TASK_CLASS_CD</Type>
+			<LOVName>Min. Dutton & Tudge Meeting</LOVName>
+			<Value>Min. Dutton & Tudge Meeting</Value>
+			<Active>Y</Active>
+			<Exists>Y</Exists>
+			<Order>17</Order>
+			<Description></Description>
+			<Low></Low>
+			<High></High>
+			<ParentType></ParentType>
+			<ParentValue></ParentValue>
+		</LOV>
+
+var minimumWidthForDateColumn = 170;
+
+List Of Values Dynamic
+
+EXISTS([Login Name]=LoginName())
+
+EXISTS([Login Name Parent]=LoginName())
+
+[Business Field]='Source' AND [Active Flag]='Y'
+
+'IMMI Web Form Admin'.Search = ""
+'IMMI Web Form Admin'.Sort = "Form Name"
+
+
+IMMI Web Form Page Admin or IMMI Web Form Admin or IMMI Web Form Business Rule*
+
+
+
+IMMI YF 050520 AUG20 - Added for Decision Web Form Attachment
+
+
+IMMI YF 20200512: fix defect 1241999
+
+ CA - Notification to OHOS & Legal: Transfer Approval
+
+IIf([Type]='s198E','Email Notification to OHOS Recipient Id, IMMI Email Group Recipient, CA - Notification to OHOS & Legal: Transfer Approval, Recipient Id','')
+
+
+Comm Recipient Group Pick List Applet
+
+
+typeof n[e] != "undefined" && (i = n[e].call(n))
+
+
+IMMI YF 260520 AUG20 - Added for F9 Email Customisation
+
+
+[Name]='{{LoginName}}' AND [Type]='{{TypeVal}}' AND [Status]='Active'
+(\{{2})(([^\}])*|([^\{])*)(\}{2})
+({{([^}])*}})
+
+isStringDblQuoted: function(str){
+			return (/^\".*\"$/.test(str));
+		}
+
+var ps=SiebelApp.S_App.NewPropertySet();
+ps.SetProperty("FormId","1-2LBKO53")
+var pso = immi.utils.runService("IMMI Web Form Business Rule Engine Service","GetBROutcome",ps);
+
+"{"TRANSFER BARRIERS":["Next Court Date within 6 weeks","Family in detention","Mobility Access","Psychiatric Services"],"WARNING INDICATORS":["Escape Risk","High/Extreme Risk Rating","Less than 30 Days in Detention","OMCG","Adverse Security Assessment","Vulnerable"]}"
+"{"TRANSFER BARRIERS":["Next Court Date within 6 weeks","Family in community (VIC)","Family in detention","Mobility Access","Psychiatric Services"],"WARNING INDICATORS":["Escape Risk","High/Extreme Risk Rating","Less than 30 Days in Detention","OMCG","Adverse Security Assessment","Vulnerable"]}"
+
+Escape - Attempted
+Escape - Tools in Possession
+
+IMMI YF 090620 AUG20 - added for business rule engine
+
+.immi-flag-list{
+	border: 2px solid #ccc;
+    padding: .5em;
+}
+asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfas
+
+1-32171503
+
+You do not have the appropriate permission to access the " + retArr[0]["Form Name Alias"]+ ". </br>Please contact IT Support requesting for " +TheApplication().GetProfileAttr("IMMI Siebel Section Name")+" assistance."
+
+
+The " + retArr[0]["Form Name Alias"]+ " is currently in use by John Smith (EXCBJU), last updated at 06/06/2020 12:00:00PM.  Please try again later.
+
+Closed - More Info Requested
+Rejected
+Approved
+No Transfer Required
+No Longer Required
+Created in Error
+[Id]='{{FORM ID}}' AND ([Text30_009] IS NULL OR [Text30_009]<'30')
+
+You cannot access the Detention Placement Assessment in its current state.
+Please refer to Decision record 1-1234 in the CCMD Portal for details.
+
+
+5.	Complete
+6.	No longer Required
+7.	Created In Error
+
+
+Adelaide ITA–DPA Approvers	-	Adelaide ITA
+Brisbane ITA–DPA Approvers	-	Brisbane ITA
+Melbourne ITA–DPA Approvers	-	Melbourne ITA
+North West Point Immigration Facility–DPA Approvers	-	Christmas Island
+Phosphate Hill APOD–DPA Approvers	-	Christmas Island
+Construction Camp APOD–DPA Approvers	-	Christmas Island
+Perth IDC–DPA Approvers	-	Perth IDC
+Broadmeadows RP APOD–DPA Approvers	-	Melbourne ITA
+Villawood IDC–DPA Approvers	-	Villawood IDC
+Yongah Hill IDC–DPA Approvers	-	Yongah Hill IDC
+
+
+You do not have the appropriate permission to access the Detention Placement Assessment.
+Please refer to Decision record 1-1234 in the CCMD Portal for details.
+
+Text100_005
+Text100_006
+IMMI_BUS_ADMIN_GROUP_NAME
+
+
+IMMI_DPA_FACILITY
+IMMI_DPA_CURR_DET_FACILITY
+
+DPA_Reviewer
+1-2LBKO53
+
+var a=TheApplication().GetProfileAttr("IMMI Business Group Access");
+Form Session Seconds
+
+var
+pm.ExecuteMethod("SetFormattedValue", pm.Get("GetControls")[prop], fldObj[prop]);
+						}
+					}
+
+					//save the record
+					if(pm.ExecuteMethod("CanInvokeMethod","WriteRecord")){
+						pm.ExecuteMethod("InvokeMethod","WriteRecord");
+					}
+FieldValue("Text30_008") IS NOT NULL AND FieldValue("Text30_008")='Involuntary'
+[Text30_008] IS NOT NULL AND [Text30_008]='Involuntary'
+
+FieldValue("Text5_011")='Yes'
+
+https://pdcwnbvas114.dinnp.bcz.gov.au/ecm/app/internalecmform/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&ParRowId=&RowId=1-2LBKO53&Form=DPA
+
+
+[Web Form Id]='{{FORM ID}}' AND ([Participation Type] = 'Alleged Offender' OR [Participation Type] = 'Involved') AND ([Incident Type]='Abusive/Aggressive Behaviour' OR [Incident Type]='Assault - Client < 18' OR [Incident Type]='Assault - Serious' OR [Incident Type]='Damage - Serious' OR [Incident Type]='Disturbance - Major' OR [Incident Type]='Disturbance - Minor' OR [Incident Type]='Hostage' OR [Incident Type]='Riot' OR [Incident Type]='SRSS Assault - Critical' OR [Incident Type]='SRSS Abusive/Aggressive Behav' OR [Incident Type]='SRSS Criminal Behaviour - Crit' OR [Incident Type]='SRSS Criminal Behaviour-Major' OR [Incident Type]='Use of Force' OR [Incident Type]='Use of Observation Rm > 24 hrs' OR [Incident Type]='Weapon - Client in possession')
+
+[Web Form Id]='{{FORM ID}}' AND [Criminal Matter Type] = 'Defendant' AND ([Offence Categories]='Abduction, Harassment & Other Offences Against The Person' OR [Offence Categories]='Acts Intended To Cause Injury' OR [Offence Categories]='Unlawful Entry With Intent/Burglary, Break & Enter' OR [Offence Categories]='Dangerous Or Negligent Acts Endangering Persons' OR [Offence Categories]='Disturbance/Affray' OR [Offence Categories]='Homicide & Related Offences' OR [Offence Categories]='Prohibited & Regulated Weapons & Explosives Offences' OR [Offence Categories]='Property Damage & Environmental Pollution' OR [Offence Categories]='Robbery, Extortion & Related Offences' OR [Offence Categories]='Theft & Related Offences')
+
+[Web Form Id]='{{FORM ID}}' AND ([Participation Type] = 'Alleged Offender' OR [Participation Type] = 'Involved') AND ([Incident Type]='Assault - Sexual' OR [Incident Type]='Child - Physical abuse' OR [Incident Type]='Child - Sexual abuse' OR [Incident Type]='Child Exploitation' OR [Incident Type]='SRSS Assault Sexual <18 - Crit' OR [Incident Type]='SRSS Assault Sexual <18-Major' OR [Incident Type]='SRSS Assault Sexual <18-Minor' OR [Incident Type]='SRSS Assault Sexual Adult-Maj' OR [Incident Type]='SRSS Assault Sexual Adult-Min')
+
+
+[Web Form Id]='{{FORM ID}}' AND [Next Court Date] IS NOT NULL AND [Next Court Date]<Today()+43
+
+[Web Form Id]='{{FORM ID}}' AND [In Detention]='N' AND [Location]='ACT'
+
+[Parent Id]='{{FORM ID}}' AND [Type]='Vulnerability' AND [Check Box]='Y' AND [Label]='Victim of domestic violence'
+
+
+•	Addictions (including drugs)
+•	Age
+•	Crown witness in legal proceedings
+•	Disability - Mental
+•	Disability - Physical
+•	Human source/Informant
+•	Lesbian/Gay/Bi/Trans/Intersex (LGBTI)
+•	Nature of offence – Cultural/Religious reasons
+•	Nature of offence - Involving minors
+•	Nature of offence - Involving elderly/disabled
+•	Nature of offence - Personal or psychological characteristics
+•	Nature of offence - Prior protection status
+•	Nature of offence - Public profile
+•	Nature of offence - Sexually based
+•	Sex Worker
+•	Victim of domestic violence
+•	Victim of sexually based offence
+•	Threat to People
+•	Time spent in vulnerable corrections environment or protected prisoner
+•	History of sexual assault
+•	History of sexual offences (convicted)
+•	History of sexual offences (charge but dropped/not convicted)
+\\pdcwnbvas114\Logs\tracelogs
+
+[Web Form Id]='{{FORM ID}}' AND [Criminal Matter Type] = 'Defendant' AND ([Offence Categories]='Abduction, Harassment & Other Offences Against The Person' OR [Offence Categories]='Acts Intended To Cause Injury' OR [Offence Categories]='Unlawful Entry With Intent/Burglary, Break & Enter' OR [Offence Categories]='Dangerous Or Negligent Acts Endangering Persons' OR [Offence Categories]='Disturbance/Affray' OR [Offence Categories]='Homicide & Related Offences' OR [Offence Categories]='Prohibited & Regulated Weapons & Explosives Offences' OR [Offence Categories]='Property Damage & Environmental Pollution' OR [Offence Categories]='Robbery, Extortion & Related Offences' OR [Offence Categories]='Theft & Related Offences')
+
+
+[Web Form Id]='1-2LBKO53' AND [Criminal Matter Type] = 'Defendant' AND ([Offence Categories]='Abduction, Harassment Other Offences Against The Person' OR [Offence Categories]='Acts Intended To Cause Injury')
+
+[Web Form Id]='1-2LBKO53' AND [Criminal Matter Type] = 'Defendant' AND ([Offence Categories]='Abduction Harassment Other Offences Against The Person' OR [Offence Categories]='Acts Intended To Cause Injury')
+
+[Web Form Id]='1-2LBKO53' AND [Criminal Matter Type] = 'Defendant' AND ([Offence Categories]='Abduction Harassment Other Offences Against The Person')
+SRSS Abusive/Aggressive Behav
+
+268CZD Warrant - Education Provider (Phone Issued)
+
+
+Email DPA Approver Response Recipient Id, IMMI Email Group Recipient, Response Email Address, Recipient Id
+Id, IMMI DPA Decision Web Form, Response Email Address
+Id, IMMI ESC Applicants, Applicant Email
+
+https://pdcwnbvas115.dinnp.bcz.gov.au/ecm/app/internalecmform/enu?SWECmd=GotoView&SWEView=IMMI+Internal+Web+Form+Acknowledge+View&ParRowId=&RowId=1-32N7XFL&Form=DPA
+1-32N7XFL
+
+[RefApp]
+Docked                   = TRUE
+ConnectString            = SIEBREF
+TableOwner               = SIEBEL
+DLL                      = sscddcli.dll
+SqlStyle                 = DB2
+MaxCachedCursors         = 16
+MaxCachedDataSets        = 16
+ReverseFillThreshold     = 100
+CaseInsensitive          = FALSE
+InsensitivityFactor      = 2
+FileSystem               = C:\Siebel\IP17\siebfs
+GatewayAddress           = PDCWNBVAS112.dinnp.bcz.gov.au:8111
+EnterpriseServer         = SBA_REF_ENT
+CurrentSQLID             =
+MaxCursorSize            = -1
+PrefetchSize             = -1
+
+var ps=SiebelApp.S_App.NewPropertySet();
+ps.SetProperty("FormId","1-32N7XFL")
+var pso = immi.utils.runService("IMMI Web Form Business Rule Engine Service","GetBROutcome",ps);
+
+select * from cx_form_data where ROW_ID='1-32N7XFL'
+
+http://BIRS/BOE/OpenDocument/opendoc/openDocument.jsp?sIDType=CUID&iDocID=AXgseMbYsiZIs9GYlOQ2SqE
+
+For instance of Integration Component 'Correspondence Template', using user key '[CorrtmplFileName] = "MF Test TRIM" AND [Sales Document Name] = "1-32NRM04"', a record with identical values already exists in the Siebel database.
+
+Please ensure that the field values in the input message are unique.(SBL-EAI-04381)
+For instance of Integration Component 'Correspondence Template', using user key '[CorrtmplFileName] = "MF Test TRIM" AND [Sales Document Name] = "1-32NRM04"', a record with identical values already exists in the Siebel database.
+
+Please ensure that the field values in the input message are unique.(SBL-EAI-04381)
+
+<span class='qlblbold'>Have you ever used or consumed any illicit substances?</span><div>(Regardless of the form or method of consumption)</div><p>This includes 'one off' or 'experimental' usage, regardless of when, where or how the usage occurred. If you have unintentionally consumed illicit drugs (e.g. you have been the victim of drink spiking), select yes and provide details in the further information section below.</p><p>You must declare your use of illicit drugs, as well as your use of a range of other substances such as steroids, inhalants, 'legal highs' or prescription medications (if you have consumed any prescription medications for a non-medical or non-prescribed purpose).</p>
+
+<span class='qlblbold'>Have you ever used or consumed any illicit substances?</span><div>(Regardless of the form or method of consumption)</div><p>This includes 'one off' or 'experimental' usage, regardless of when, where or how the usage occurred. If you have unintentionally consumed illicit drugs (e.g. you have been the victim of drink spiking), select yes and provide details in the further information section below.</p><p>You must declare your use of illicit drugs, as well as your use of a range of other substances such as steroids, inhalants, 'legal highs' or prescription medications (if you have consumed any prescription medications for a non-medical or non-prescribed purpose).  Click on the help icon for a full list of substances which you must declare.</p>
+Text100_012
+b794ab17-eabe-406d-a9e5-475a14d5f439
+
+https://trimcan1.app.local/HPRMWebDrawer/Record?q=+ADD2020%2F1058024
+
+Discharged (if conditions apply)
+IMMI DP Reviewer Email
+IMMI Detention Security Email
+Phone Number (Business Hours):
+PickFld_087
+
+[Parent Id]='{{FORM ID}}' AND [Type]='Service Infrastructure' AND [Check Box]='Y' AND [Label]='Mobility Access'
+
+[Parent Id]='{{FORM ID}}' AND [Type]='Service Infrastructure' AND [Check Box]='Y' AND [Label]='Peri/Post-natal Services'
+
+Opiate Substitution Program
+Torture/trauma Program
+Psychiatric Services
+Peri/Post-natal Services
+Assisted living arrangements
+
+[UTCDateTime_011] IS NOT NULL AND [UTCDateTime_011]<Today()+43
+
+[Date_011] IS NOT NULL AND [Date_011] >= Today() AND [Date_011]<Today()+43
+
+IMMI Web Form Check Box
+
+https://e6-portals.immi.gov.au/pkmslogin.form?redir=/ecm/app/epublicsector/enu
+
+1-32PQMDB
+ADD2019/4200612
+1-5YXWUXQ
+COMM_RECIP_SRC
+
+1-5YFOTGP
+
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 Edg/80.0.361.50"
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+
+Done in OUI, No Longer Needed.
+GetProfileAttr("HideWebFormApplet")="Y"
+
+
+
+IMMI BIP Report Generation with Timeout Monitoring WF|Generate Error|Report execution failed
+1-5Z5X4U8
+
+https://e6-portals.immi.gov.au/ecm/app/epublicsector/enu?SWECmd=GotoView&SWEView=IMMI+Decisions+Online+Form+View&SWERF=1&SWEHo=e6-portals.immi.gov.au&SWEBU=1
+1-325PR1V
